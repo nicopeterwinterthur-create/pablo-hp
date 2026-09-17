@@ -19,12 +19,17 @@
   .card p{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5;}
   .card a{display:inline-block;font-size:13px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #222;padding-bottom:2px;}
   footer{margin-top:50px;font-size:12px;color:#999;}
+  h2.section{font-size:20px;margin:56px 0 6px;}
+  p.section-lead{color:#666;margin-bottom:26px;max-width:640px;font-size:14px;}
+  .badge{display:inline-block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:#222;color:#fff;padding:3px 8px;border-radius:10px;margin-left:8px;vertical-align:middle;}
+  .sub-link{display:block;font-size:12px;color:#999;margin-top:4px;text-decoration:none;border:none;}
+  .sub-link:hover{color:#555;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Layout-Vorschläge — photography-p</h1>
-  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen. Bitte einen Favoriten auswählen oder Elemente aus mehreren mischen.</p>
+  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen.</p>
   <div class="cards">
     <div class="card">
       <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
@@ -40,12 +45,39 @@
     </div>
     <div class="card">
       <div class="swatch" style="background-image:url('assets/images/landschaft/landschaft-01.jpg')"></div>
-      <h2>3 · Classic Elegant</h2>
+      <h2>3 · Classic Elegant <span class="badge">gewählt</span></h2>
       <p>Sidebar-Navigation, warme Erdtöne, Studio-Charakter mit Testimonial und Kontaktformular. Wirkt vertrauenswürdig für Buchungen.</p>
       <a href="layouts/03-classic-elegant.html">Ansehen →</a>
     </div>
   </div>
-  <footer>Ordnerstruktur &amp; Hinweise siehe README.md im Projekt.</footer>
+
+  <h2 class="section">Farb- &amp; Schriftvorschläge — aufgebaut auf Vorschlag 3</h2>
+  <p class="section-lead">Gleiche Struktur (Sidebar, Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog, Kontakt) — nur Farben und Schrift unterscheiden sich. Jede Version enthält bereits einen Beispiel-Blogartikel.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#f7f2ea,#b06a45)"></div>
+      <h2>A · Warme Nähe</h2>
+      <p>Creme &amp; Espresso-Braun, Akzent Terrakotta. Schrift: Fraunces (Headlines) + Inter. Persönlich, einladend, vertrauensbildend.</p>
+      <a href="layouts/v3a-warme-naehe.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3a-warme-naehe-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#14161a,#c9a86a)"></div>
+      <h2>B · Cinematic Frame</h2>
+      <p>Dunkle Sidebar als "Filmrahmen", heller Inhalt, Messing-Akzent. Schrift: Cormorant Garamond (kursiv) + Space Grotesk. Cinematisch, technisch, hochwertig.</p>
+      <a href="layouts/v3b-cinematic-frame.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3b-cinematic-frame-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#f1f2f0,#5c7a72)"></div>
+      <h2>C · Ruhiger Fluss</h2>
+      <p>Nebelgrau &amp; Blaugrau, Akzent gedämpftes Salbeigrün. Schrift: Manrope durchgängig. Ruhig, minimal, technisch sauber.</p>
+      <a href="layouts/v3c-ruhiger-fluss.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3c-ruhiger-fluss-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+  </div>
+
+  <footer>Ordnerstruktur &amp; Hinweise siehe README.md im Projekt. Drohnenvideo fehlt noch — Platzhalter aktiv, siehe README.</footer>
 </div>
 </body>
 </html>
