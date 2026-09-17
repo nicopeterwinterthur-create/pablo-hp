@@ -9,11 +9,11 @@ Nachvollziehbarkeit die bisherigen Etappen.
 
 ## Aktuelle Version
 
-**Version 1 · Herbstwärme &amp; Navy** (`layouts/v1-herbstwaerme-navy.html`,
-Beispielartikel: `layouts/v1-herbstwaerme-navy-blogartikel.html`)
+**Version 3 · Herbstwärme &amp; Navy** (`layouts/v3-herbstwaerme-navy.html`,
+Beispielartikel: `layouts/v3-herbstwaerme-navy-blogartikel.html`)
 
-Basiert auf Layout-Vorschlag 1 (Minimal Editorial: grosszügiger Fullscreen-Hero,
-grosse Typografie, ruhige Bildergalerie), kombiniert mit:
+Basiert auf Layout-Vorschlag 3 (Classic Elegant: Sidebar-Navigation, Studio-
+Charakter), kombiniert mit:
 
 - **Schrift** aus der Cinematic-Frame-Variante: *Cormorant Garamond*
   (Headlines, teils kursiv) + *Space Grotesk* (Navigation/Labels/Meta) +
@@ -31,7 +31,8 @@ Positionierung (Was ich mache / Stärken) → Blog (3 Teaser + Beispielartikel)
 
 ## Bisherige Etappen
 
-Zur Nachvollziehbarkeit im Repo erhalten:
+Zur Nachvollziehbarkeit im Repo erhalten — ab hier beginnt das Finetuning der
+aktuellen Version:
 
 **Layout-Vorschläge** (Schritt 1, zur Stilfindung):
 
@@ -41,6 +42,12 @@ Zur Nachvollziehbarkeit im Repo erhalten:
    Masonry-Galerie als Hauptelement, kräftige Akzentfarbe.
 3. **Classic Elegant** (`layouts/03-classic-elegant.html`) — Sidebar-Navigation,
    warme Erdtöne, Studio-Charakter mit Testimonial und Kontaktformular.
+   → Struktur-Basis der aktuellen Version.
+
+**Zwischenschritt** (`layouts/v1-herbstwaerme-navy.html` +
+`-blogartikel.html`) — dasselbe Herbstwärme/Navy-Farb- und Schriftsystem,
+aber kurzzeitig auf Layout 1 (Fullscreen-Hero statt Sidebar) angewendet,
+bevor die Entscheidung zugunsten von Layout 3 als Struktur-Basis fiel.
 
 **Farb- & Schriftvorschläge auf Basis von Vorschlag 3** (Schritt 2, Zwischenetappe),
 mit erweiterter Seitenstruktur — Titelseite (Drohnenvideo-Hero), Über mich,
@@ -78,7 +85,7 @@ weiter.
 
 ### Drohnenvideo (Titelseite)
 
-Die Hero-Sektion der `v3*`-Varianten ist als Video-Hintergrund gebaut:
+Die Hero-Sektion der `v1*`/`v3*`-Varianten ist als Video-Hintergrund gebaut:
 `<video>` lädt `assets/video/drone-intro.mp4` und zeigt bis dahin (und falls
 die Datei fehlt) automatisch das Bild `assets/images/hero/hero-01.jpg` als
 Standbild-Ersatz — die Seite funktioniert also schon jetzt, ohne dass ein
@@ -92,11 +99,13 @@ stumm/ohne Ton, komprimiert für Web — H.264/MP4).
 pablo-hp/
 ├── index.html                          Übersicht — aktuelle Version + bisherige Etappen
 ├── layouts/
-│   ├── v1-herbstwaerme-navy.html            ★ Aktuelle Version
-│   ├── v1-herbstwaerme-navy-blogartikel.html    Beispiel-Blogartikel dazu
-│   ├── 01-minimal-editorial.html       Layout-Vorschlag 1 (Basis der aktuellen Version)
+│   ├── v3-herbstwaerme-navy.html            ★ Aktuelle Version
+│   ├── v3-herbstwaerme-navy-blogartikel.html    Beispiel-Blogartikel dazu
+│   ├── 01-minimal-editorial.html       Layout-Vorschlag 1
 │   ├── 02-bold-portfolio.html          Layout-Vorschlag 2
-│   ├── 03-classic-elegant.html         Layout-Vorschlag 3
+│   ├── 03-classic-elegant.html         Layout-Vorschlag 3 (Struktur-Basis der aktuellen Version)
+│   ├── v1-herbstwaerme-navy.html       Zwischenschritt: gleiches Farb-/Schriftsystem auf Layout 1
+│   ├── v1-herbstwaerme-navy-blogartikel.html Beispiel-Blogartikel dazu
 │   ├── v3a-warme-naehe.html            Farb-/Schriftvariante A (Zwischenetappe)
 │   ├── v3a-warme-naehe-blogartikel.html    Beispiel-Blogartikel zu A
 │   ├── v3b-cinematic-frame.html        Farb-/Schriftvariante B (Zwischenetappe)
@@ -123,8 +132,8 @@ auf der Homepage verwendet werden.
 
 ## Nächste Schritte
 
-- Feedback zur aktuellen Version (`v1-herbstwaerme-navy.html`) — Feinschliff
-  bei Bedarf
+- Finetuning der aktuellen Version (`v3-herbstwaerme-navy.html`) — Details,
+  Abstände, Bildausschnitte etc. nach Feedback anpassen
 - Finale Texte liefern (Über mich, Positionierung: Angebot &amp; Stärken,
   Kontaktdaten, echte Blogartikel)
 - Drohnenvideo als `assets/video/drone-intro.mp4` ablegen
