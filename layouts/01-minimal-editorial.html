@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pablo — Fotografie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1a1a1a;
+    --paper:#faf9f7;
+    --muted:#7a7a7a;
+    --line:#e2e0dc;
+    --accent:#b08d57;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    font-weight:300;
+    line-height:1.6;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
+
+  /* placeholder image blocks */
+  .ph{
+    position:relative;
+    background:linear-gradient(135deg,#d8d3c8,#bdb6a6 45%,#8f8a7c);
+    display:flex;align-items:flex-end;
+    overflow:hidden;
+  }
+  .ph::after{
+    content:attr(data-label);
+    position:absolute;top:14px;right:14px;
+    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
+    background:rgba(255,255,255,.75);color:#555;
+    padding:4px 8px;border-radius:2px;
+  }
+  .ph:nth-of-type(3n+1){background:linear-gradient(135deg,#ded9cd,#a9a291 60%,#6f6a5d);}
+  .ph:nth-of-type(3n+2){background:linear-gradient(135deg,#e3ddd0,#c2b9a4 55%,#847c69);}
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:28px 40px;
+    mix-blend-mode:difference;
+  }
+  header .brand{font-family:'Playfair Display',serif;font-size:22px;color:#fff;letter-spacing:.03em;}
+  nav{display:flex;gap:32px;}
+  nav a{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:#fff;}
+
+  /* hero */
+  .hero{
+    height:100vh;min-height:640px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:0 0 70px;
+    color:#fff;
+  }
+  .hero .hero-inner{padding:0 40px;position:relative;z-index:2;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.55) 100%);
+    z-index:1;
+  }
+  .hero h1{font-size:clamp(48px,8vw,110px);line-height:.95;font-weight:500;}
+  .hero p{margin-top:18px;max-width:420px;font-size:15px;color:#eee;}
+  .scroll-hint{position:absolute;bottom:28px;left:40px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.8;z-index:2;}
+
+  /* intro / about */
+  section{padding:120px 0;}
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .about .ph{height:520px;}
+  .about .eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+  .about h2{font-size:38px;margin-bottom:22px;}
+  .about p{color:var(--muted);max-width:440px;}
+
+  /* gallery */
+  .gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
+  .gallery-head h2{font-size:38px;}
+  .gallery-head span{font-size:13px;color:var(--muted);}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;}
+  .grid .ph{grid-column:span 3;height:420px;}
+  .grid .ph:nth-child(1){grid-column:span 4;}
+  .grid .ph:nth-child(2){grid-column:span 2;}
+  .grid .ph:nth-child(3){grid-column:span 2;}
+  .grid .ph:nth-child(4){grid-column:span 4;}
+  .grid .ph:nth-child(5){grid-column:span 3;}
+  .grid .ph:nth-child(6){grid-column:span 3;}
+
+  /* categories */
+  .cats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .cats .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .cat{padding:48px 32px;border-right:1px solid var(--line);}
+  .cat:last-child{border-right:none;}
+  .cat .num{font-size:12px;color:var(--accent);letter-spacing:.1em;}
+  .cat h3{font-size:22px;margin:14px 0 10px;}
+  .cat p{font-size:13px;color:var(--muted);}
+
+  /* contact */
+  .contact{text-align:center;}
+  .contact h2{font-size:44px;max-width:640px;margin:0 auto 28px;}
+  .contact p{color:var(--muted);margin-bottom:34px;}
+  .btn{display:inline-block;padding:16px 38px;border:1px solid var(--ink);font-size:13px;letter-spacing:.1em;text-transform:uppercase;transition:.25s;}
+  .btn:hover{background:var(--ink);color:#fff;}
+
+  footer{padding:40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--muted);}
+
+  @media(max-width:900px){
+    .wrap{padding:0 22px;}
+    header{padding:20px 22px;}
+    nav{display:none;}
+    .about{grid-template-columns:1fr;gap:36px;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .grid .ph,.grid .ph:nth-child(1),.grid .ph:nth-child(2),.grid .ph:nth-child(3),.grid .ph:nth-child(4){grid-column:span 1;height:280px;}
+    .cats .wrap{grid-template-columns:1fr 1fr;}
+    .cat{border-bottom:1px solid var(--line);}
+    footer{flex-direction:column;gap:8px;padding:28px 22px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">Pablo</div>
+  <nav>
+    <a href="#work">Arbeiten</a>
+    <a href="#about">Über mich</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero ph" data-label="Hero-Bild">
+  <div class="hero-inner">
+    <h1>Pablo<br>Fotografie</h1>
+    <p>Junger Fotograf mit Blick fürs Wesentliche — Porträt, Hochzeit &amp; Landschaft.</p>
+  </div>
+  <div class="scroll-hint">Scrollen ↓</div>
+</section>
+
+<section class="about wrap" id="about">
+  <div class="ph" data-label="Porträt Pablo"></div>
+  <div>
+    <div class="eyebrow">Über mich</div>
+    <h2>Geschichten erzählen<br>mit Licht.</h2>
+    <p>Platzhaltertext — hier kommt die persönliche Vorstellung des Fotografen hin: Werdegang, Stil, Ausrüstung, was ihn antreibt. Sobald die Details vorliegen, ersetzen wir diesen Absatz.</p>
+  </div>
+</section>
+
+<section class="wrap" id="work">
+  <div class="gallery-head">
+    <h2>Ausgewählte Arbeiten</h2>
+    <span>2024 — 2026</span>
+  </div>
+  <div class="grid">
+    <div class="ph" data-label="Portrait 01"></div>
+    <div class="ph" data-label="Portrait 02"></div>
+    <div class="ph" data-label="Hochzeit 01"></div>
+    <div class="ph" data-label="Landschaft 01"></div>
+    <div class="ph" data-label="Street 01"></div>
+    <div class="ph" data-label="Event 01"></div>
+  </div>
+</section>
+
+<section class="cats">
+  <div class="wrap">
+    <div class="cat"><div class="num">01</div><h3>Porträt</h3><p>Individuelle Shootings, natürliches Licht.</p></div>
+    <div class="cat"><div class="num">02</div><h3>Hochzeit</h3><p>Der schönste Tag, authentisch festgehalten.</p></div>
+    <div class="cat"><div class="num">03</div><h3>Landschaft</h3><p>Ruhige Weiten, große Formate.</p></div>
+    <div class="cat"><div class="num">04</div><h3>Event</h3><p>Momente, die man nicht wiederholen kann.</p></div>
+  </div>
+</section>
+
+<section class="contact wrap" id="contact">
+  <h2>Lust auf ein gemeinsames Projekt?</h2>
+  <p>Platzhalter — Kontaktdaten, E-Mail oder Formular folgen.</p>
+  <a class="btn" href="mailto:hallo@pablo-fotografie.de">Kontakt aufnehmen</a>
+</section>
+
+<footer>
+  <span>© 2026 Pablo Fotografie</span>
+  <span>Instagram · E-Mail · Impressum</span>
+</footer>
+
+</body>
+</html>
