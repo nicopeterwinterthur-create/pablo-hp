@@ -1,7 +1,8 @@
-# Pablo Fotografie — Homepage
+# photography-p — Homepage
 
-Projekt für die Homepage eines angehenden Fotografen. Enthält 3 Layout-Vorschläge
-als Diskussionsgrundlage sowie die Ordnerstruktur für Assets.
+Projekt für die Homepage von **photography-p**, einem angehenden Fotografen.
+Enthält 3 Layout-Vorschläge als Diskussionsgrundlage sowie die Ordnerstruktur
+für Assets.
 
 ## Vorschau
 
@@ -15,10 +16,13 @@ als Diskussionsgrundlage sowie die Ordnerstruktur für Assets.
    warme Erdtöne, Studio-Charakter mit Testimonial und Kontaktformular.
 
 Alle drei Dateien sind eigenständig (HTML + CSS inline, keine Build-Tools nötig)
-und lassen sich direkt im Browser öffnen. Texte und Bilder sind aktuell
-Platzhalter — Layouts sind bewusst so gebaut, dass sich Platzhalter-Blöcke
-(`.ph` / `.swatch`) 1:1 durch echte Fotos ersetzen lassen (Hintergrundbild
-statt Gradient).
+und lassen sich direkt im Browser öffnen. Texte sind aktuell Platzhalter. Die
+Bilder in `assets/images/` sind **generierte Beispielgrafiken** (abstrakte
+Kompositionen je Kategorie, keine echten Fotos), damit die Layouts nicht mit
+grauen Flächen wirken, sondern realistischer eingeschätzt werden können.
+Jedes Bild wird per `background-image` eingebunden (`.ph`-Blöcke) — sobald
+echte Fotos vorliegen, einfach die Datei am gleichen Pfad ersetzen, der Rest
+funktioniert automatisch weiter.
 
 ## Ordnerstruktur
 
@@ -49,6 +53,6 @@ auf der Homepage verwendet werden.
 ## Nächste Schritte
 
 - Einen der 3 Vorschläge auswählen (oder Elemente mischen)
-- Finale Texte (Name, Über-mich-Text, Kategorien, Kontaktdaten) liefern
-- Fotos in `assets/images/...` einsortieren
-- Platzhalter (`data-label`-Blöcke) durch echte `background-image`s ersetzen
+- Finale Texte (Über-mich-Text, Kategorien, Kontaktdaten) liefern
+- Echte Fotos in `assets/images/...` einsortieren (gleiche Dateinamen wie die
+  aktuellen Beispielbilder verwenden, dann muss im HTML nichts angepasst werden)

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Layout-Vorschläge — Pablo Fotografie</title>
+<title>Layout-Vorschläge — photography-p</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -14,10 +14,7 @@
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;}
   .card{background:#fff;border:1px solid #e3e1db;border-radius:8px;padding:26px;transition:.2s;}
   .card:hover{box-shadow:0 8px 24px rgba(0,0,0,.06);transform:translateY(-2px);}
-  .card .swatch{height:110px;border-radius:6px;margin-bottom:18px;}
-  .s1{background:linear-gradient(135deg,#d8d3c8,#8f8a7c);}
-  .s2{background:linear-gradient(135deg,#3a3632,#151412);}
-  .s3{background:linear-gradient(135deg,#ded4bf,#a6976f);}
+  .card .swatch{height:150px;border-radius:6px;margin-bottom:18px;background-size:cover;background-position:center;}
   .card h2{font-size:18px;margin-bottom:8px;}
   .card p{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5;}
   .card a{display:inline-block;font-size:13px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #222;padding-bottom:2px;}
@@ -26,23 +23,23 @@
 </head>
 <body>
 <div class="wrap">
-  <h1>Layout-Vorschläge — Pablo Fotografie</h1>
-  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Alle Inhalte sind Platzhalter und werden ersetzt, sobald die finalen Texte/Bilder vorliegen. Bitte einen Favoriten auswählen oder Elemente aus mehreren mischen.</p>
+  <h1>Layout-Vorschläge — photography-p</h1>
+  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen. Bitte einen Favoriten auswählen oder Elemente aus mehreren mischen.</p>
   <div class="cards">
     <div class="card">
-      <div class="swatch s1"></div>
+      <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
       <h2>1 · Minimal Editorial</h2>
       <p>Grosszügiger Fullscreen-Hero, viel Weissraum, serifenbetonte Typografie. Magazin-Look, sehr ruhig und edel.</p>
       <a href="layouts/01-minimal-editorial.html">Ansehen →</a>
     </div>
     <div class="card">
-      <div class="swatch s2"></div>
+      <div class="swatch" style="background-image:url('assets/images/street/street-01.jpg')"></div>
       <h2>2 · Bold Portfolio</h2>
       <p>Dark Mode, asymmetrisches Masonry-Grid als Hauptfokus, kräftige Akzentfarbe. Wirkt modern und selbstbewusst.</p>
       <a href="layouts/02-bold-portfolio.html">Ansehen →</a>
     </div>
     <div class="card">
-      <div class="swatch s3"></div>
+      <div class="swatch" style="background-image:url('assets/images/landschaft/landschaft-01.jpg')"></div>
       <h2>3 · Classic Elegant</h2>
       <p>Sidebar-Navigation, warme Erdtöne, Studio-Charakter mit Testimonial und Kontaktformular. Wirkt vertrauenswürdig für Buchungen.</p>
       <a href="layouts/03-classic-elegant.html">Ansehen →</a>

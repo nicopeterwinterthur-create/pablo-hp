@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pablo Fotografie — Studio</title>
+<title>photography-p — Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -27,16 +27,11 @@
   a{color:inherit;text-decoration:none;}
 
   .ph{
-    background:linear-gradient(160deg,#ded4bf,#c7b99b 55%,#a6976f);
+    background-color:#c7b99b;
+    background-size:cover;
+    background-position:center;
     position:relative;overflow:hidden;border-radius:6px;
   }
-  .ph::after{
-    content:attr(data-label);position:absolute;bottom:12px;left:12px;
-    font-size:10px;letter-spacing:.1em;text-transform:uppercase;
-    background:rgba(255,255,255,.7);padding:3px 8px;border-radius:2px;color:#5a5443;
-  }
-  .ph:nth-of-type(3n+2){background:linear-gradient(160deg,#e3dbc9,#bdad88 55%,#8f7f57);}
-  .ph:nth-of-type(3n+3){background:linear-gradient(160deg,#d8cdb3,#b4a47a 55%,#7c6d49);}
 
   .layout{display:grid;grid-template-columns:240px 1fr;min-height:100vh;}
 
@@ -122,7 +117,7 @@
 <div class="layout">
   <aside class="sidebar">
     <div>
-      <div class="brand">Pablo<small>Fotografie Studio</small></div>
+      <div class="brand">photography-p<small>Fotografie Studio</small></div>
       <nav>
         <a href="#work">Portfolio</a>
         <a href="#about">Über mich</a>
@@ -138,17 +133,17 @@
       <div>
         <div class="eyebrow">Fotograf · Winterthur</div>
         <h1>Zeitlose Bilder für besondere Momente</h1>
-        <p>Platzhaltertext — kurze, warme Einführung: wer Pablo ist und für wen er fotografiert. Wird nach Rücksprache ersetzt.</p>
+        <p>Platzhaltertext — kurze, warme Einführung: wer der Fotograf ist und für wen er fotografiert. Wird nach Rücksprache ersetzt.</p>
         <div class="actions">
           <a class="btn solid" href="#contact">Termin anfragen</a>
           <a class="btn" href="#work">Portfolio ansehen</a>
         </div>
       </div>
-      <div class="ph" data-label="Hero-Bild"></div>
+      <div class="ph" style="background-image:url('../assets/images/hero/hero-01.jpg')"></div>
     </section>
 
     <section class="about divider" id="about">
-      <div class="ph" data-label="Porträt Pablo"></div>
+      <div class="ph" style="background-image:url('../assets/images/about/about-fotograf.jpg')"></div>
       <div>
         <h2>Über mich</h2>
         <p>Platzhaltertext für die persönliche Vorstellung: Ausbildung, Stil, was Kunden erwarten dürfen. Details folgen.</p>
@@ -166,9 +161,9 @@
         <h2>Ausgewählte Arbeiten</h2>
       </div>
       <div class="cards">
-        <div class="card"><div class="ph" data-label="Porträt"></div><h3>Porträt</h3><p>Individuell, natürliches Licht.</p></div>
-        <div class="card"><div class="ph" data-label="Hochzeit"></div><h3>Hochzeit</h3><p>Der schönste Tag, festgehalten.</p></div>
-        <div class="card"><div class="ph" data-label="Landschaft"></div><h3>Landschaft</h3><p>Ruhige, grosse Formate.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/portraets/portrait-01.jpg')"></div><h3>Porträt</h3><p>Individuell, natürliches Licht.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-01.jpg')"></div><h3>Hochzeit</h3><p>Der schönste Tag, festgehalten.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div><h3>Landschaft</h3><p>Ruhige, grosse Formate.</p></div>
       </div>
     </section>
 
@@ -183,9 +178,9 @@
         <h2>Was ich anbiete</h2>
       </div>
       <div class="cards">
-        <div class="card"><div class="ph" data-label="Event"></div><h3>Event</h3><p>Diskret &amp; zuverlässig.</p></div>
-        <div class="card"><div class="ph" data-label="Street"></div><h3>Street</h3><p>Authentische Momentaufnahmen.</p></div>
-        <div class="card"><div class="ph" data-label="Business"></div><h3>Business</h3><p>Professionelle Porträts für Bewerbung &amp; LinkedIn.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/events/event-01.jpg')"></div><h3>Event</h3><p>Diskret &amp; zuverlässig.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/street/street-01.jpg')"></div><h3>Street</h3><p>Authentische Momentaufnahmen.</p></div>
+        <div class="card"><div class="ph" style="background-image:url('../assets/images/portraets/business-01.jpg')"></div><h3>Business</h3><p>Professionelle Porträts für Bewerbung &amp; LinkedIn.</p></div>
       </div>
     </section>
 
@@ -200,7 +195,7 @@
       </form>
     </section>
 
-    <footer>© 2026 Pablo Fotografie Studio — Impressum · Datenschutz</footer>
+    <footer>© 2026 photography-p — Impressum · Datenschutz</footer>
   </main>
 </div>
 

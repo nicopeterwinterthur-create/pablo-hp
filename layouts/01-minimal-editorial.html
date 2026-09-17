@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pablo — Fotografie</title>
+<title>photography-p — Fotografie</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -28,22 +28,15 @@
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
 
-  /* placeholder image blocks */
+  /* image blocks — background-image set inline per element, swap the url() to change photo */
   .ph{
     position:relative;
-    background:linear-gradient(135deg,#d8d3c8,#bdb6a6 45%,#8f8a7c);
+    background-color:#c9c2b4;
+    background-size:cover;
+    background-position:center;
     display:flex;align-items:flex-end;
     overflow:hidden;
   }
-  .ph::after{
-    content:attr(data-label);
-    position:absolute;top:14px;right:14px;
-    font-size:11px;letter-spacing:.08em;text-transform:uppercase;
-    background:rgba(255,255,255,.75);color:#555;
-    padding:4px 8px;border-radius:2px;
-  }
-  .ph:nth-of-type(3n+1){background:linear-gradient(135deg,#ded9cd,#a9a291 60%,#6f6a5d);}
-  .ph:nth-of-type(3n+2){background:linear-gradient(135deg,#e3ddd0,#c2b9a4 55%,#847c69);}
 
   /* header */
   header{
@@ -128,7 +121,7 @@
 <body>
 
 <header>
-  <div class="brand">Pablo</div>
+  <div class="brand">photography-p</div>
   <nav>
     <a href="#work">Arbeiten</a>
     <a href="#about">Über mich</a>
@@ -136,16 +129,16 @@
   </nav>
 </header>
 
-<section class="hero ph" data-label="Hero-Bild">
+<section class="hero ph" style="background-image:url('../assets/images/hero/hero-01.jpg')">
   <div class="hero-inner">
-    <h1>Pablo<br>Fotografie</h1>
+    <h1>photography-p</h1>
     <p>Junger Fotograf mit Blick fürs Wesentliche — Porträt, Hochzeit &amp; Landschaft.</p>
   </div>
   <div class="scroll-hint">Scrollen ↓</div>
 </section>
 
 <section class="about wrap" id="about">
-  <div class="ph" data-label="Porträt Pablo"></div>
+  <div class="ph" style="background-image:url('../assets/images/about/about-fotograf.jpg')"></div>
   <div>
     <div class="eyebrow">Über mich</div>
     <h2>Geschichten erzählen<br>mit Licht.</h2>
@@ -159,12 +152,12 @@
     <span>2024 — 2026</span>
   </div>
   <div class="grid">
-    <div class="ph" data-label="Portrait 01"></div>
-    <div class="ph" data-label="Portrait 02"></div>
-    <div class="ph" data-label="Hochzeit 01"></div>
-    <div class="ph" data-label="Landschaft 01"></div>
-    <div class="ph" data-label="Street 01"></div>
-    <div class="ph" data-label="Event 01"></div>
+    <div class="ph" style="background-image:url('../assets/images/portraets/portrait-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/portraets/portrait-02.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/street/street-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/events/event-01.jpg')"></div>
   </div>
 </section>
 
@@ -180,11 +173,11 @@
 <section class="contact wrap" id="contact">
   <h2>Lust auf ein gemeinsames Projekt?</h2>
   <p>Platzhalter — Kontaktdaten, E-Mail oder Formular folgen.</p>
-  <a class="btn" href="mailto:hallo@pablo-fotografie.de">Kontakt aufnehmen</a>
+  <a class="btn" href="mailto:hallo@photography-p.ch">Kontakt aufnehmen</a>
 </section>
 
 <footer>
-  <span>© 2026 Pablo Fotografie</span>
+  <span>© 2026 photography-p</span>
   <span>Instagram · E-Mail · Impressum</span>
 </footer>
 
