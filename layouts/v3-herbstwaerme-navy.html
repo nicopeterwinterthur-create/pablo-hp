@@ -81,6 +81,7 @@
   .sidebar nav a{display:inline-block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--sidebar-fg);transition:color .25s ease,font-size .25s ease;}
   .sidebar nav a:hover{color:var(--rost);font-size:14.5px;}
   .sidebar .social{display:flex;gap:16px;font-size:12px;color:var(--sidebar-muted);}
+  .menu-toggle{display:none;}
 
   main{padding:0;}
 
@@ -189,9 +190,37 @@
   @media(max-width:980px){
     :root{--sidebar-w:0px;}
     .layout{grid-template-columns:1fr;}
-    .sidebar{position:relative;height:auto;flex-direction:row;align-items:center;padding:20px 24px;}
-    .sidebar nav{flex-direction:row;gap:16px;margin-top:0;flex-wrap:wrap;}
+
+    /* compact, auto-hiding mobile header */
+    .sidebar{
+      position:fixed;top:0;left:0;right:0;height:auto;
+      flex-direction:column;align-items:stretch;padding:0;
+      transition:transform .35s ease;
+    }
+    .sidebar.is-hidden{transform:translateY(-100%) !important;}
+    .sidebar-top{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;}
+    .brand .tagline,.brand .owner{display:none;}
+    .brand .brand-name{font-size:18px;}
+    .menu-toggle{
+      display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;
+      width:36px;height:36px;border:none;background:none;padding:0;cursor:pointer;flex-shrink:0;
+    }
+    .menu-toggle span{display:block;width:22px;height:2px;background:var(--sidebar-fg);transition:transform .25s ease,opacity .25s ease;}
+    .menu-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .menu-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .menu-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .sidebar nav{
+      flex-direction:column;gap:0;margin-top:0;
+      max-height:0;overflow:hidden;opacity:0;
+      background:var(--sidebar-bg);
+      transition:max-height .35s ease,opacity .3s ease;
+    }
+    .sidebar nav.is-open{max-height:380px;opacity:1;}
+    .sidebar nav a{padding:14px 20px;border-top:1px solid var(--line);}
+    .sidebar nav a:hover{font-size:13px;}
     .sidebar .social{display:none;}
+
+    .hero{height:80vh;min-height:460px;}
     .about{grid-template-columns:1fr;padding:50px 24px;gap:32px;}
     section{padding:56px 24px;}
     .cards,.blog-grid,.position-grid{grid-template-columns:1fr;}
@@ -207,13 +236,18 @@
 
 <div class="layout">
   <aside class="sidebar">
-    <div>
-      <a class="brand" href="#start">
-        <span class="brand-name">photography-p</span>
-        <span class="tagline">Foto- &amp; Videografie</span>
-        <span class="owner">Pablo Bieri</span>
-      </a>
-      <nav>
+    <div class="sidebar-main">
+      <div class="sidebar-top">
+        <a class="brand" href="#start">
+          <span class="brand-name">photography-p</span>
+          <span class="tagline">Foto- &amp; Videografie</span>
+          <span class="owner">Pablo Bieri</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <nav id="site-nav">
         <a href="#start">Start</a>
         <a href="#about">Über mich</a>
         <a href="#work">Portfolio</a>
@@ -348,6 +382,47 @@
     <footer>© 2026 photography-p — Impressum · Datenschutz</footer>
   </main>
 </div>
+
+<script>
+(function(){
+  var sidebar = document.querySelector('.sidebar');
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('site-nav');
+  if(toggle && nav){
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    nav.querySelectorAll('a').forEach(function(link){
+      link.addEventListener('click', function(){
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+  var lastY = window.scrollY;
+  var ticking = false;
+  function onScroll(){
+    var y = window.scrollY;
+    var menuOpen = nav && nav.classList.contains('is-open');
+    if(!menuOpen){
+      if(y > lastY && y > 80){
+        sidebar.classList.add('is-hidden');
+      } else {
+        sidebar.classList.remove('is-hidden');
+      }
+    }
+    lastY = y;
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if(!ticking){
+      requestAnimationFrame(onScroll);
+      ticking = true;
+    }
+  }, {passive:true});
+})();
+</script>
 
 </body>
 </html>
