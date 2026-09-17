@@ -24,12 +24,35 @@
   .badge{display:inline-block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:#222;color:#fff;padding:3px 8px;border-radius:10px;margin-left:8px;vertical-align:middle;}
   .sub-link{display:block;font-size:12px;color:#999;margin-top:4px;text-decoration:none;border:none;}
   .sub-link:hover{color:#555;}
+  .current{background:#fff;border:2px solid #16233d;border-radius:10px;padding:30px;margin-bottom:60px;}
+  .current .swatch{height:220px;border-radius:6px;margin-bottom:20px;background-size:cover;background-position:center;}
+  .current h2{font-size:22px;margin-bottom:10px;}
+  .current p{color:#555;font-size:14px;margin-bottom:18px;max-width:640px;}
+  .current .links{display:flex;gap:18px;flex-wrap:wrap;}
+  .current a.primary{display:inline-block;font-size:13px;font-weight:600;color:#fff;background:#16233d;text-decoration:none;padding:10px 20px;border-radius:6px;}
+  .current a.secondary{display:inline-block;font-size:13px;font-weight:600;color:#16233d;text-decoration:none;padding:10px 0;border-bottom:1px solid #16233d;}
+  .badge.current-badge{background:#16233d;}
+  h2.section{border-top:1px solid #e3e1db;padding-top:36px;}
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Layout-Vorschläge — photography-p</h1>
-  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen.</p>
+  <p class="lead">Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen.</p>
+
+  <div class="current">
+    <span class="badge current-badge">Aktuelle Version</span>
+    <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
+    <h2>Version 1 · Herbstwärme &amp; Navy</h2>
+    <p>Basierend auf Layout 1 (Minimal Editorial), weiterentwickelt: Schrift aus der Cinematic-Version (Cormorant Garamond + Space Grotesk + Inter), warme Herbstpalette (Creme, Beige, Rost, Ocker, Kastanienbraun), Überschriften in dunklem Navy-Blau, Fliesstext in kontrastreichem Anthrazit. Vollständige Struktur: Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog (inkl. Beispielartikel), Kontakt.</p>
+    <div class="links">
+      <a class="primary" href="layouts/v1-herbstwaerme-navy.html">Startseite ansehen →</a>
+      <a class="secondary" href="layouts/v1-herbstwaerme-navy-blogartikel.html">Beispiel-Blogartikel ansehen →</a>
+    </div>
+  </div>
+
+  <h2 class="section">Bisherige Etappen</h2>
+  <p class="section-lead">Zur Nachvollziehbarkeit: die ursprünglichen 3 Layout-Vorschläge sowie die darauf aufbauenden Farb-/Schriftvarianten, aus denen die aktuelle Version entstanden ist.</p>
   <div class="cards">
     <div class="card">
       <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
@@ -45,14 +68,14 @@
     </div>
     <div class="card">
       <div class="swatch" style="background-image:url('assets/images/landschaft/landschaft-01.jpg')"></div>
-      <h2>3 · Classic Elegant <span class="badge">gewählt</span></h2>
+      <h2>3 · Classic Elegant</h2>
       <p>Sidebar-Navigation, warme Erdtöne, Studio-Charakter mit Testimonial und Kontaktformular. Wirkt vertrauenswürdig für Buchungen.</p>
       <a href="layouts/03-classic-elegant.html">Ansehen →</a>
     </div>
   </div>
 
-  <h2 class="section">Farb- &amp; Schriftvorschläge — aufgebaut auf Vorschlag 3</h2>
-  <p class="section-lead">Gleiche Struktur (Sidebar, Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog, Kontakt) — nur Farben und Schrift unterscheiden sich. Jede Version enthält bereits einen Beispiel-Blogartikel.</p>
+  <h2 class="section">Farb- &amp; Schriftvorschläge — aufgebaut auf Vorschlag 3 (Zwischenschritt)</h2>
+  <p class="section-lead">Gleiche Struktur (Sidebar, Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog, Kontakt) — nur Farben und Schrift unterscheiden sich. Diente als Grundlage für die Schrift- und Farbentscheidung der aktuellen Version oben.</p>
   <div class="cards">
     <div class="card">
       <div class="swatch" style="background:linear-gradient(135deg,#f7f2ea,#b06a45)"></div>
