@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>photography-p — Fotografie</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    /* Herbstwärme-Palette */
+    --creme:#faf6ee;
+    --beige:#f0e4d0;
+    --rost:#c1682f;
+    --ocker:#c99a3a;
+    --kastanie:#6b3a2c;
+    --line:#e6d7bd;
+    /* Typografie */
+    --navy:#16233d;
+    --ink:#2c2f33;
+    --muted:#726a5e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--ink);
+    background:var(--creme);
+    font-weight:300;
+    line-height:1.65;
+  }
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy);}
+  .label,.eyebrow,nav a,.brand,.btn,.blog-date,.scroll-hint{font-family:'Space Grotesk',sans-serif;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 40px;}
+
+  /* image blocks */
+  .ph{
+    position:relative;
+    background-color:var(--beige);
+    background-size:cover;
+    background-position:center;
+    display:flex;align-items:flex-end;
+    overflow:hidden;
+  }
+
+  /* header */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:50;
+    display:flex;justify-content:space-between;align-items:center;
+    padding:26px 40px;
+    mix-blend-mode:difference;
+  }
+  header .brand{font-size:20px;color:#fff;letter-spacing:.04em;}
+  nav{display:flex;gap:26px;}
+  nav a{font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#fff;}
+
+  /* video hero */
+  .hero{
+    position:relative;height:100vh;min-height:640px;
+    display:flex;flex-direction:column;justify-content:flex-end;
+    padding:0 0 70px;color:#fff;overflow:hidden;
+    background:var(--kastanie) url('../assets/images/hero/hero-01.jpg') center/cover;
+  }
+  .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
+  .hero.no-video .hero-video{display:none;}
+  .hero-inner{padding:0 40px;position:relative;z-index:2;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(22,15,10,.1) 0%,rgba(22,15,10,.62) 100%);
+    z-index:1;
+  }
+  .hero .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ocker);margin-bottom:14px;}
+  .hero h1{font-size:clamp(42px,7.5vw,98px);line-height:.98;color:#fff;}
+  .hero p{margin-top:18px;max-width:440px;font-size:15px;color:#f1ece2;}
+  .hero p code{background:rgba(255,255,255,.14);padding:2px 6px;border-radius:3px;font-family:monospace;font-size:13px;}
+  .hero .actions{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .scroll-hint{position:absolute;bottom:28px;left:40px;font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:#fff;opacity:.8;z-index:2;}
+
+  /* buttons */
+  .btn{display:inline-block;padding:15px 34px;border:1px solid currentColor;font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:.25s;}
+  .btn.solid{background:#fff;color:var(--navy);border-color:#fff;}
+  .btn.solid:hover{background:var(--rost);border-color:var(--rost);color:#fff;}
+  .btn.ghost{color:#fff;}
+  .btn.ghost:hover{background:rgba(255,255,255,.14);}
+  .btn.dark{border-color:var(--navy);color:var(--navy);}
+  .btn.dark:hover{background:var(--navy);color:var(--creme);}
+
+  /* sections */
+  section{padding:120px 0;}
+  .divider{border-top:1px solid var(--line);}
+  .placeholder-note{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rost);margin-bottom:14px;font-family:'Space Grotesk',sans-serif;}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+  .about .ph{height:520px;border-radius:4px;}
+  .about .eyebrow{font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:var(--rost);margin-bottom:18px;}
+  .about h2{font-size:40px;margin-bottom:22px;}
+  .about p{color:var(--ink);max-width:440px;}
+  .stats{display:flex;gap:40px;margin-top:30px;}
+  .stats div strong{display:block;font-size:26px;font-family:'Cormorant Garamond',serif;color:var(--navy);}
+  .stats div span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+
+  /* gallery */
+  .gallery-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:56px;}
+  .gallery-head h2{font-size:40px;}
+  .gallery-head span{font-size:13px;color:var(--muted);font-family:'Space Grotesk',sans-serif;}
+  .grid{display:grid;grid-template-columns:repeat(6,1fr);gap:24px;}
+  .grid .ph{grid-column:span 3;height:420px;border-radius:4px;}
+  .grid .ph:nth-child(1){grid-column:span 4;}
+  .grid .ph:nth-child(2){grid-column:span 2;}
+  .grid .ph:nth-child(3){grid-column:span 2;}
+  .grid .ph:nth-child(4){grid-column:span 4;}
+  .grid .ph:nth-child(5){grid-column:span 3;}
+  .grid .ph:nth-child(6){grid-column:span 3;}
+
+  /* categories */
+  .cats{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--beige);}
+  .cats .wrap{display:grid;grid-template-columns:repeat(4,1fr);}
+  .cat{padding:48px 32px;border-right:1px solid var(--line);}
+  .cat:last-child{border-right:none;}
+  .cat .num{font-size:12px;color:var(--rost);letter-spacing:.1em;font-family:'Space Grotesk',sans-serif;}
+  .cat h3{font-size:22px;margin:14px 0 10px;}
+  .cat p{font-size:13px;color:var(--muted);}
+
+  /* positioning */
+  .position-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+  .position-grid h3{font-size:26px;margin-bottom:6px;color:var(--navy);}
+  .plain-list{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:12px;}
+  .plain-list li{padding-left:24px;position:relative;color:var(--ink);font-size:14px;}
+  .plain-list li::before{content:"—";position:absolute;left:0;color:var(--ocker);}
+
+  /* blog */
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .blog-card .ph{height:200px;margin-bottom:18px;border-radius:4px;}
+  .blog-date{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ocker);}
+  .blog-card h3{font-size:20px;margin:10px 0 8px;line-height:1.3;color:var(--navy);}
+  .blog-card p{font-size:13px;color:var(--muted);margin-bottom:12px;}
+  .blog-card .read-more{font-size:12px;font-weight:600;color:var(--rost);border-bottom:1px solid var(--rost);padding-bottom:2px;font-family:'Space Grotesk',sans-serif;}
+  .blog-more{text-align:center;margin-top:50px;}
+  .blog-more a{font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--navy);padding-bottom:3px;font-family:'Space Grotesk',sans-serif;}
+
+  /* quote */
+  .quote{text-align:center;background:var(--beige);}
+  .quote blockquote{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(24px,3vw,34px);max-width:760px;margin:0 auto;color:var(--navy);}
+  .quote cite{display:block;margin-top:24px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-style:normal;font-family:'Space Grotesk',sans-serif;}
+
+  /* contact */
+  .contact{text-align:center;}
+  .contact h2{font-size:46px;max-width:640px;margin:0 auto 28px;}
+  .contact p{color:var(--muted);margin-bottom:34px;}
+
+  footer{padding:40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-family:'Space Grotesk',sans-serif;}
+
+  @media(max-width:900px){
+    .wrap{padding:0 22px;}
+    header{padding:20px 22px;}
+    nav{display:none;}
+    .about,.position-grid{grid-template-columns:1fr;gap:36px;}
+    .grid,.blog-grid{grid-template-columns:1fr 1fr;}
+    .grid .ph,.grid .ph:nth-child(1),.grid .ph:nth-child(2),.grid .ph:nth-child(3),.grid .ph:nth-child(4){grid-column:span 1;height:280px;}
+    .blog-grid{grid-template-columns:1fr;}
+    .cats .wrap{grid-template-columns:1fr 1fr;}
+    .cat{border-bottom:1px solid var(--line);}
+    footer{flex-direction:column;gap:8px;padding:28px 22px;}
+    section{padding:80px 0;}
+  }
+</style>
+</head>
+<body>
+
+
+<header>
+  <div class="brand">photography-p</div>
+  <nav>
+    <a href="#start">Start</a>
+    <a href="#about">Über mich</a>
+    <a href="#work">Portfolio</a>
+    <a href="#positionierung">Positionierung</a>
+    <a href="#blog">Blog</a>
+    <a href="#contact">Kontakt</a>
+  </nav>
+</header>
+
+<section class="hero ph" id="start">
+  <video class="hero-video" autoplay muted loop playsinline
+    poster="../assets/images/hero/hero-01.jpg"
+    onerror="this.closest('.hero').classList.add('no-video')">
+    <source src="../assets/video/drone-intro.mp4" type="video/mp4">
+  </video>
+  <div class="hero-inner">
+    <div class="eyebrow">photography-p</div>
+    <h1>Perspektiven,<br>die man fühlt.</h1>
+    <p>Platzhaltertext — Drohnenaufnahme als bewegtes Intro. Hier später das finale Video einsetzen (<code>assets/video/drone-intro.mp4</code>); bis dahin dient dieses Standbild als Vorschau.</p>
+    <div class="actions">
+      <a class="btn solid" href="#work">Portfolio ansehen</a>
+      <a class="btn ghost" href="#contact">Termin anfragen</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Scrollen ↓</div>
+</section>
+
+<section class="about wrap" id="about">
+  <div class="ph" style="background-image:url('../assets/images/about/about-fotograf.jpg')"></div>
+  <div>
+    <div class="placeholder-note">Platzhalter</div>
+    <div class="eyebrow">Über mich</div>
+    <h2>Geschichten erzählen<br>mit Licht.</h2>
+    <p>Platzhaltertext — hier kommt die persönliche Vorstellung des Fotografen hin: Werdegang, Stil, Haltung, was ihn antreibt. Sobald die Details vorliegen, ersetzen wir diesen Absatz.</p>
+    <div class="stats">
+      <div><strong>3+</strong><span>Jahre Erfahrung</span></div>
+      <div><strong>120+</strong><span>Shootings</span></div>
+      <div><strong>5.0</strong><span>Kundenbewertung</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="wrap" id="work">
+  <div class="gallery-head">
+    <h2>Ausgewählte Arbeiten</h2>
+    <span>2024 — 2026</span>
+  </div>
+  <div class="grid">
+    <div class="ph" style="background-image:url('../assets/images/portraets/portrait-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/portraets/portrait-02.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/street/street-01.jpg')"></div>
+    <div class="ph" style="background-image:url('../assets/images/events/event-01.jpg')"></div>
+  </div>
+</section>
+
+<section class="cats">
+  <div class="wrap">
+    <div class="cat"><div class="num">01</div><h3>Porträt</h3><p>Individuelle Shootings, natürliches Licht.</p></div>
+    <div class="cat"><div class="num">02</div><h3>Hochzeit</h3><p>Der schönste Tag, authentisch festgehalten.</p></div>
+    <div class="cat"><div class="num">03</div><h3>Landschaft &amp; Drohne</h3><p>Ruhige Weiten, cinematische Perspektiven.</p></div>
+    <div class="cat"><div class="num">04</div><h3>Event</h3><p>Momente, die man nicht wiederholen kann.</p></div>
+  </div>
+</section>
+
+<section class="quote">
+  <blockquote>„Platzhalter-Zitat einer zufriedenen Kundin oder eines Kunden — später durch echtes Testimonial ersetzen.“</blockquote>
+  <cite>— Name, Anlass</cite>
+</section>
+
+<section class="wrap" id="positionierung">
+  <div class="gallery-head">
+    <h2>Positionierung</h2>
+    <span>Was ich mache &amp; worin ich stark bin</span>
+  </div>
+  <div class="position-grid">
+    <div>
+      <h3>Was ich mache</h3>
+      <div class="placeholder-note">Platzhalter — Texte folgen</div>
+      <ul class="plain-list">
+        <li>Leistung / Angebot 1 — wird noch beschrieben</li>
+        <li>Leistung / Angebot 2 — wird noch beschrieben</li>
+        <li>Leistung / Angebot 3 — wird noch beschrieben</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Stärken</h3>
+      <div class="placeholder-note">Platzhalter — Texte folgen</div>
+      <ul class="plain-list">
+        <li>Stärke 1 — wird noch beschrieben</li>
+        <li>Stärke 2 — wird noch beschrieben</li>
+        <li>Stärke 3 — wird noch beschrieben</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="divider wrap" id="blog">
+  <div class="gallery-head">
+    <h2>Aus dem Feld</h2>
+    <span>Blog</span>
+  </div>
+  <div class="blog-grid">
+    <article class="blog-card">
+      <div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div>
+      <span class="blog-date">12. März 2026 · Behind the Scenes</span>
+      <h3>Mit der Drohne über den Bergen — ein Making-of</h3>
+      <p>Wie eine ruhige Luftaufnahme entsteht: Planung, Wetterfenster und der eine Take, der alles verändert.</p>
+      <a class="read-more" href="v1-herbstwaerme-navy-blogartikel.html">Weiterlesen →</a>
+    </article>
+    <article class="blog-card">
+      <div class="ph" style="background-image:url('../assets/images/portraets/portrait-02.jpg')"></div>
+      <span class="blog-date">2. Februar 2026 · Technik</span>
+      <h3>Warum ich fast nur mit natürlichem Licht arbeite</h3>
+      <p>Drei einfache Prinzipien, mit denen Porträts ruhiger und ehrlicher wirken — ganz ohne Blitz.</p>
+      <a class="read-more" href="v1-herbstwaerme-navy-blogartikel.html">Weiterlesen →</a>
+    </article>
+    <article class="blog-card">
+      <div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-02.jpg')"></div>
+      <span class="blog-date">18. Januar 2026 · Geschichten</span>
+      <h3>Ein Hochzeitstag, zwei Wetterlagen, ein Bild</h3>
+      <p>Was passiert, wenn der Plan nicht aufgeht — und warum das oft die besten Fotos ergibt.</p>
+      <a class="read-more" href="v1-herbstwaerme-navy-blogartikel.html">Weiterlesen →</a>
+    </article>
+  </div>
+  <div class="blog-more"><a href="v1-herbstwaerme-navy-blogartikel.html">Alle Beiträge ansehen →</a></div>
+</section>
+
+<section class="contact wrap" id="contact">
+  <h2>Lust auf ein gemeinsames Projekt?</h2>
+  <p>Platzhalter — Kontaktdaten, E-Mail oder Formular folgen.</p>
+  <a class="btn dark" href="mailto:hallo@photography-p.ch">Kontakt aufnehmen</a>
+</section>
+
+<footer>
+  <span>© 2026 photography-p</span>
+  <span>Instagram · E-Mail · Impressum</span>
+</footer>
+
+</body>
+</html>

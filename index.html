@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Layout-Vorschläge — photography-p</title>
+<title>Layout-Vorschläge — picture-p</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   *{box-sizing:border-box;margin:0;padding:0;}
@@ -19,12 +19,40 @@
   .card p{font-size:13px;color:#777;margin-bottom:18px;line-height:1.5;}
   .card a{display:inline-block;font-size:13px;font-weight:600;color:#222;text-decoration:none;border-bottom:1px solid #222;padding-bottom:2px;}
   footer{margin-top:50px;font-size:12px;color:#999;}
+  h2.section{font-size:20px;margin:56px 0 6px;}
+  p.section-lead{color:#666;margin-bottom:26px;max-width:640px;font-size:14px;}
+  .badge{display:inline-block;font-size:10px;letter-spacing:.06em;text-transform:uppercase;background:#222;color:#fff;padding:3px 8px;border-radius:10px;margin-left:8px;vertical-align:middle;}
+  .sub-link{display:block;font-size:12px;color:#999;margin-top:4px;text-decoration:none;border:none;}
+  .sub-link:hover{color:#555;}
+  .current{background:#fff;border:2px solid #16233d;border-radius:10px;padding:30px;margin-bottom:60px;}
+  .current .swatch{height:220px;border-radius:6px;margin-bottom:20px;background-size:cover;background-position:center;}
+  .current h2{font-size:22px;margin-bottom:10px;}
+  .current p{color:#555;font-size:14px;margin-bottom:18px;max-width:640px;}
+  .current .links{display:flex;gap:18px;flex-wrap:wrap;}
+  .current a.primary{display:inline-block;font-size:13px;font-weight:600;color:#fff;background:#16233d;text-decoration:none;padding:10px 20px;border-radius:6px;}
+  .current a.secondary{display:inline-block;font-size:13px;font-weight:600;color:#16233d;text-decoration:none;padding:10px 0;border-bottom:1px solid #16233d;}
+  .badge.current-badge{background:#16233d;}
+  h2.section{border-top:1px solid #e3e1db;padding-top:36px;}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Layout-Vorschläge — photography-p</h1>
-  <p class="lead">Drei unterschiedliche Stilrichtungen für die neue Homepage. Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen. Bitte einen Favoriten auswählen oder Elemente aus mehreren mischen.</p>
+  <h1>Layout-Vorschläge — picture-p</h1>
+  <p class="lead">Texte sind Platzhalter, Bilder sind generierte Beispielgrafiken zur Veranschaulichung — beides wird ersetzt, sobald die finalen Inhalte vorliegen.</p>
+
+  <div class="current">
+    <span class="badge current-badge">Aktuelle Version</span>
+    <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
+    <h2>Version 3 · Herbstwärme &amp; Navy</h2>
+    <p>Basierend auf Layout 3 (Classic Elegant, Sidebar-Navigation), mit dem Schrift- und Farbsystem: Cormorant Garamond + Space Grotesk + Inter, warme Herbstpalette (Creme, Beige, Rost, Ocker, Kastanienbraun), Überschriften in dunklem Navy-Blau, Fliesstext in kontrastreichem Anthrazit. Vollständige Struktur: Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog (inkl. Beispielartikel), Kontakt. Ab hier startet das Finetuning.</p>
+    <div class="links">
+      <a class="primary" href="layouts/v3-herbstwaerme-navy.html">Startseite ansehen →</a>
+      <a class="secondary" href="layouts/v3-herbstwaerme-navy-blogartikel.html">Beispiel-Blogartikel ansehen →</a>
+    </div>
+  </div>
+
+  <h2 class="section">Bisherige Etappen</h2>
+  <p class="section-lead">Zur Nachvollziehbarkeit: die ursprünglichen 3 Layout-Vorschläge, die darauf aufbauenden Farb-/Schriftvarianten sowie ein zwischenzeitlich exploriertes Herbstwärme/Navy-Konzept auf Basis von Layout 1 — aus diesen Schritten ist die aktuelle Version entstanden.</p>
   <div class="cards">
     <div class="card">
       <div class="swatch" style="background-image:url('assets/images/hero/hero-01.jpg')"></div>
@@ -45,7 +73,46 @@
       <a href="layouts/03-classic-elegant.html">Ansehen →</a>
     </div>
   </div>
-  <footer>Ordnerstruktur &amp; Hinweise siehe README.md im Projekt.</footer>
+
+  <h2 class="section">Zwischenschritt: Herbstwärme &amp; Navy auf Basis von Layout 1</h2>
+  <p class="section-lead">Kurz explorierte Richtung, bevor die Entscheidung auf Layout 3 als Struktur-Basis fiel. Gleiches Farb-/Schriftsystem wie die aktuelle Version oben, aber mit Fullscreen-Hero statt Sidebar.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#faf6ee,#16233d)"></div>
+      <h2>V1 · Herbstwärme &amp; Navy</h2>
+      <p>Minimal-Editorial-Struktur (Fullscreen-Hero, kein Sidebar) mit demselben Farb-/Schriftsystem wie die aktuelle Version.</p>
+      <a href="layouts/v1-herbstwaerme-navy.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v1-herbstwaerme-navy-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+  </div>
+
+  <h2 class="section">Farb- &amp; Schriftvorschläge — aufgebaut auf Vorschlag 3 (Zwischenschritt)</h2>
+  <p class="section-lead">Gleiche Struktur (Sidebar, Titelseite mit Drohnenvideo-Hero, Über mich, Portfolio, Positionierung, Blog, Kontakt) — nur Farben und Schrift unterscheiden sich. Diente als Grundlage für die Schrift- und Farbentscheidung der aktuellen Version oben.</p>
+  <div class="cards">
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#f7f2ea,#b06a45)"></div>
+      <h2>A · Warme Nähe</h2>
+      <p>Creme &amp; Espresso-Braun, Akzent Terrakotta. Schrift: Fraunces (Headlines) + Inter. Persönlich, einladend, vertrauensbildend.</p>
+      <a href="layouts/v3a-warme-naehe.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3a-warme-naehe-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#14161a,#c9a86a)"></div>
+      <h2>B · Cinematic Frame</h2>
+      <p>Dunkle Sidebar als "Filmrahmen", heller Inhalt, Messing-Akzent. Schrift: Cormorant Garamond (kursiv) + Space Grotesk. Cinematisch, technisch, hochwertig.</p>
+      <a href="layouts/v3b-cinematic-frame.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3b-cinematic-frame-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+    <div class="card">
+      <div class="swatch" style="background:linear-gradient(135deg,#f1f2f0,#5c7a72)"></div>
+      <h2>C · Ruhiger Fluss</h2>
+      <p>Nebelgrau &amp; Blaugrau, Akzent gedämpftes Salbeigrün. Schrift: Manrope durchgängig. Ruhig, minimal, technisch sauber.</p>
+      <a href="layouts/v3c-ruhiger-fluss.html">Ansehen →</a>
+      <a class="sub-link" href="layouts/v3c-ruhiger-fluss-blogartikel.html">↳ Beispiel-Blogartikel</a>
+    </div>
+  </div>
+
+  <footer>Ordnerstruktur &amp; Hinweise siehe README.md im Projekt. Drohnenvideo fehlt noch — Platzhalter aktiv, siehe README.</footer>
 </div>
 </body>
 </html>
