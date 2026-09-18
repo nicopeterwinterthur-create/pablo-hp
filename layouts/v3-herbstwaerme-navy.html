@@ -6,7 +6,7 @@
 <title>picture-p — Herbstwärme &amp; Navy</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Space+Grotesk:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     /* Herbstwärme-Palette */
@@ -65,10 +65,10 @@
   }
   .brand{display:flex;flex-direction:column;color:var(--sidebar-fg);transition:transform .3s ease;transform-origin:left center;}
   .brand:hover{transform:scale(1.03);}
-  .brand .brand-name{display:block;font-size:24px;line-height:1.05;font-weight:500;letter-spacing:.01em;transition:color .3s ease;}
+  .brand .owner{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;line-height:1.2;color:var(--rost);}
+  .brand .brand-name{display:block;font-size:24px;line-height:1.05;font-weight:500;letter-spacing:.01em;margin-top:4px;transition:color .3s ease;}
   .brand:hover .brand-name{color:var(--rost);}
   .brand .tagline{display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--sidebar-muted);margin-top:6px;font-weight:400;}
-  .brand .owner{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;line-height:1.2;color:var(--sidebar-fg);opacity:.8;margin-top:4px;}
   .sidebar nav{display:flex;flex-direction:column;gap:20px;margin-top:40px;}
   .sidebar nav a{position:relative;display:inline-block;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--sidebar-fg);transition:color .3s ease,font-size .25s ease,padding-left .3s ease;}
   .sidebar nav a:hover{color:var(--rost);font-size:14.5px;}
@@ -270,9 +270,9 @@
     <div class="sidebar-main">
       <div class="sidebar-top">
         <a class="brand" href="#start">
+          <span class="owner">Pablo Bieri</span>
           <span class="brand-name">picture-p</span>
           <span class="tagline">Foto- &amp; Videografie</span>
-          <span class="owner">Pablo Bieri</span>
         </a>
         <button class="menu-toggle" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="site-nav">
           <span></span><span></span><span></span>
