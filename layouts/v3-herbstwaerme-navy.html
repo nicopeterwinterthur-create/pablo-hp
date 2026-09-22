@@ -44,6 +44,22 @@
     background-position:center;
     position:relative;overflow:hidden;border-radius:6px;
   }
+  /* WebP content images: small mobile version by default, larger desktop
+     version swapped in from 980px (same breakpoint as the layout switch). */
+  .img-about{background-image:url('../assets/images/about/about-fotograf-mobile.webp');}
+  .img-portrait-01{background-image:url('../assets/images/portraets/portrait-01-mobile.webp');}
+  .img-hochzeit-01{background-image:url('../assets/images/hochzeiten/hochzeit-01-mobile.webp');}
+  .img-landschaft-01{background-image:url('../assets/images/landschaft/landschaft-01-mobile.webp');}
+  .img-portrait-02{background-image:url('../assets/images/portraets/portrait-02-mobile.webp');}
+  .img-hochzeit-02{background-image:url('../assets/images/hochzeiten/hochzeit-02-mobile.webp');}
+  @media(min-width:980px){
+    .img-about{background-image:url('../assets/images/about/about-fotograf.webp');}
+    .img-portrait-01{background-image:url('../assets/images/portraets/portrait-01.webp');}
+    .img-hochzeit-01{background-image:url('../assets/images/hochzeiten/hochzeit-01.webp');}
+    .img-landschaft-01{background-image:url('../assets/images/landschaft/landschaft-01.webp');}
+    .img-portrait-02{background-image:url('../assets/images/portraets/portrait-02.webp');}
+    .img-hochzeit-02{background-image:url('../assets/images/hochzeiten/hochzeit-02.webp');}
+  }
 
   .layout{display:grid;grid-template-columns:var(--sidebar-w) 1fr;min-height:100vh;}
 
@@ -108,7 +124,7 @@
     left:calc(-1 * var(--sidebar-w));width:calc(100% + var(--sidebar-w));
     animation:hero-bg-in 2.6s cubic-bezier(.19,.55,.18,1) 1s forwards;
   }
-  .hero-fallback{z-index:0;background:var(--hero-bg) url('../assets/images/hero/hero-01.jpg') center/cover;}
+  .hero-fallback{z-index:0;background:var(--hero-bg) url('../assets/images/hero/hero-01.webp') center/cover;}
   .hero-video{z-index:1;object-fit:cover;}
   .hero.no-video .hero-video{display:none;}
   .hero-overlay{
@@ -300,7 +316,7 @@
     <section class="hero" id="start">
       <div class="hero-fallback"></div>
       <video class="hero-video" autoplay muted loop playsinline
-        poster="../assets/images/hero/hero-01.jpg"
+        poster="../assets/images/hero/hero-01.webp"
         onerror="this.closest('.hero').classList.add('no-video')">
         <source src="../assets/video/drone-intro.mp4" type="video/mp4">
       </video>
@@ -316,7 +332,7 @@
     </section>
 
     <section class="about divider" id="about">
-      <div class="ph reveal" style="background-image:url('../assets/images/about/about-fotograf.jpg')"></div>
+      <div class="ph img-about reveal"></div>
       <div class="about-text reveal">
         <div class="placeholder-note">Platzhalter</div>
         <div class="eyebrow">Über mich</div>
@@ -336,9 +352,9 @@
         <h2>Ausgewählte Arbeiten</h2>
       </div>
       <div class="cards">
-        <div class="card reveal"><div class="ph" style="background-image:url('../assets/images/portraets/portrait-01.jpg')"></div><h3>Porträt</h3><p>Individuell, natürliches Licht.</p></div>
-        <div class="card reveal"><div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-01.jpg')"></div><h3>Hochzeit</h3><p>Der schönste Tag, festgehalten.</p></div>
-        <div class="card reveal"><div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div><h3>Landschaft &amp; Drohne</h3><p>Ruhige, cinematische Weiten.</p></div>
+        <div class="card reveal"><div class="ph img-portrait-01"></div><h3>Porträt</h3><p>Individuell, natürliches Licht.</p></div>
+        <div class="card reveal"><div class="ph img-hochzeit-01"></div><h3>Hochzeit</h3><p>Der schönste Tag, festgehalten.</p></div>
+        <div class="card reveal"><div class="ph img-landschaft-01"></div><h3>Landschaft &amp; Drohne</h3><p>Ruhige, cinematische Weiten.</p></div>
       </div>
     </section>
 
@@ -381,21 +397,21 @@
       </div>
       <div class="blog-grid">
         <article class="blog-card reveal">
-          <div class="ph" style="background-image:url('../assets/images/landschaft/landschaft-01.jpg')"></div>
+          <div class="ph img-landschaft-01"></div>
           <span class="blog-date">12. März 2026 · Behind the Scenes</span>
           <h3>Mit der Drohne über den Bergen — ein Making-of</h3>
           <p>Wie eine ruhige Luftaufnahme entsteht: Planung, Wetterfenster und der eine Take, der alles verändert.</p>
           <a class="read-more" href="v3-herbstwaerme-navy-blogartikel.html">Weiterlesen →</a>
         </article>
         <article class="blog-card reveal">
-          <div class="ph" style="background-image:url('../assets/images/portraets/portrait-02.jpg')"></div>
+          <div class="ph img-portrait-02"></div>
           <span class="blog-date">2. Februar 2026 · Technik</span>
           <h3>Warum ich fast nur mit natürlichem Licht arbeite</h3>
           <p>Drei einfache Prinzipien, mit denen Porträts ruhiger und ehrlicher wirken — ganz ohne Blitz.</p>
           <a class="read-more" href="v3-herbstwaerme-navy-blogartikel.html">Weiterlesen →</a>
         </article>
         <article class="blog-card reveal">
-          <div class="ph" style="background-image:url('../assets/images/hochzeiten/hochzeit-02.jpg')"></div>
+          <div class="ph img-hochzeit-02"></div>
           <span class="blog-date">18. Januar 2026 · Geschichten</span>
           <h3>Ein Hochzeitstag, zwei Wetterlagen, ein Bild</h3>
           <p>Was passiert, wenn der Plan nicht aufgeht — und warum das oft die besten Fotos ergibt.</p>
