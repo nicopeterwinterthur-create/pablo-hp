@@ -20,7 +20,7 @@
     --navy:#16233d;
     --ink:#2c2f33;
     --muted:#726a5e;
-    --hero-bg:#1b1a19;
+    --hero-bg:#857d7c;
     --sidebar-fg:#16233d;
     --sidebar-muted:#726a5e;
     --sidebar-bg:rgba(236,214,180,.92);
@@ -124,7 +124,13 @@
     left:calc(-1 * var(--sidebar-w));width:calc(100% + var(--sidebar-w));
     animation:hero-bg-in 2.6s cubic-bezier(.19,.55,.18,1) 1s forwards;
   }
-  .hero-fallback{z-index:0;background:var(--hero-bg) url('../assets/images/hero/hero-01.webp') center/cover;}
+  .hero-fallback{
+    z-index:0;background-color:var(--hero-bg);background-size:cover;background-position:center;
+    background-image:url('../assets/images/hero/hero-intro-poster-mobile.webp');
+  }
+  @media(min-width:980px){
+    .hero-fallback{background-image:url('../assets/images/hero/hero-intro-poster.webp');}
+  }
   .hero-video{z-index:1;object-fit:cover;}
   .hero.no-video .hero-video{display:none;}
   .hero-overlay{
@@ -316,9 +322,12 @@
     <section class="hero" id="start">
       <div class="hero-fallback"></div>
       <video class="hero-video" autoplay muted loop playsinline
-        poster="../assets/images/hero/hero-01.webp"
+        poster="../assets/images/hero/hero-intro-poster.webp"
         onerror="this.closest('.hero').classList.add('no-video')">
-        <source src="../assets/video/drone-intro.mp4" type="video/mp4">
+        <source src="../assets/video/hero-intro-mobile.webm" type="video/webm" media="(max-width:980px)">
+        <source src="../assets/video/hero-intro-mobile.mp4" type="video/mp4" media="(max-width:980px)">
+        <source src="../assets/video/hero-intro.webm" type="video/webm">
+        <source src="../assets/video/hero-intro.mp4" type="video/mp4">
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
