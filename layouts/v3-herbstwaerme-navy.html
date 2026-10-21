@@ -33,6 +33,15 @@
     font-family:'Inter',sans-serif;font-weight:300;
     line-height:1.7;
   }
+  /* subtle relief texture behind the whole page: desaturated, very low
+     opacity, purely decorative, never competes with content. */
+  body::before{
+    content:'';
+    position:fixed;inset:0;z-index:-1;
+    background:url('../assets/images/texture/page-relief.webp') center/cover no-repeat;
+    opacity:.05;
+    pointer-events:none;
+  }
   h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy);}
   .eyebrow,nav a,.brand,.btn,.blog-date{font-family:'Space Grotesk',sans-serif;}
   a{color:inherit;text-decoration:none;}
