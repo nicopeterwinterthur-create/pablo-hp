@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — picture-p</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Space+Grotesk:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --creme:#faf6ee; --beige:#f0e4d0; --rost:#b3714f; --ocker:#c99a3a; --kastanie:#6b3a2c;
+    --line:#e6d7bd; --navy:#16233d; --ink:#2c2f33; --muted:#726a5e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--creme);color:var(--ink);font-family:'Inter',sans-serif;font-weight:300;line-height:1.8;}
+  h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy);}
+  a{color:var(--rost);text-decoration:none;}
+  .top{padding:28px 40px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
+  .top .brand{font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);letter-spacing:.02em;}
+  .top a.back{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:'Space Grotesk',sans-serif;}
+  main{max-width:960px;margin:0 auto;padding:70px 24px 100px;}
+  .head{text-align:center;margin-bottom:56px;}
+  .eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rost);font-family:'Space Grotesk',sans-serif;}
+  .head h1{font-size:clamp(32px,5vw,44px);margin-top:12px;}
+  .list{display:flex;flex-direction:column;gap:36px;}
+  .entry{
+    display:grid;grid-template-columns:220px 1fr;gap:28px;align-items:center;
+    background:#fff;border-radius:8px;padding:18px;
+    box-shadow:0 20px 40px -22px rgba(22,15,10,.22);
+  }
+  .entry .ph{height:150px;border-radius:6px;background-size:cover;background-position:center;}
+  .entry .meta{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ocker);margin-bottom:8px;font-family:'Space Grotesk',sans-serif;}
+  .entry h3{font-size:21px;line-height:1.3;margin-bottom:8px;}
+  .entry p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+  .entry .read-more{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--rost);border-bottom:1px solid var(--rost);padding-bottom:2px;font-family:'Space Grotesk',sans-serif;}
+  footer{padding:30px 64px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid var(--line);font-family:'Space Grotesk',sans-serif;}
+  @media(max-width:640px){
+    .entry{grid-template-columns:1fr;}
+    .entry .ph{height:200px;}
+  }
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="brand">picture-p</div>
+  <a class="back" href="v3-herbstwaerme-navy.html#blog">← Zurück zur Startseite</a>
+</div>
+<main>
+  <div class="head">
+    <div class="eyebrow">Blog</div>
+    <h1>Alle Beiträge</h1>
+  </div>
+  <div class="list">
+    <article class="entry">
+      <div class="ph" style="background-image:url('../assets/images/blog/wasserreservoir-01.webp')"></div>
+      <div>
+        <div class="meta">15. Oktober 2026 · Behind the Scenes</div>
+        <h3>Wenn das Licht fehlt — Fotografieren am alten Wasserreservoir Oberallmend</h3>
+        <p>Wie ich am alten Wasserreservoir Oberallmend mit schwierigem Licht gearbeitet habe — und was ich daraus mitgenommen habe.</p>
+        <a class="read-more" href="v3-herbstwaerme-navy-blog-wasserreservoir.html">Weiterlesen →</a>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="ph" style="background-image:url('../assets/images/blog/irix-cinematic-look.webp')"></div>
+      <div>
+        <div class="meta">28. August 2026 · Equipment</div>
+        <h3>Mein IRIX 45mm T1.5 — ein cineastischer Look</h3>
+        <p>Grosse Blende, weicher Hintergrund, ein Bildlook wie aus einem Film — mein Erfahrungsbericht zum IRIX 45mm T1.5.</p>
+        <a class="read-more" href="v3-herbstwaerme-navy-blog-irix-45mm.html">Weiterlesen →</a>
+      </div>
+    </article>
+    <article class="entry">
+      <div class="ph" style="background-image:url('../assets/images/blog/tierfotografie-rentier.webp')"></div>
+      <div>
+        <div class="meta">15. Juli 2026 · Tierfotografie</div>
+        <h3>Tierfotografie mit der Nikon Coolpix B600 — Tiere ganz nah erleben</h3>
+        <p>Mit 60-fachem Zoom nah an scheue Tiere heran, ohne sie zu stören — und mit viel Geduld zum richtigen Moment.</p>
+        <a class="read-more" href="v3-herbstwaerme-navy-blog-tierfotografie.html">Weiterlesen →</a>
+      </div>
+    </article>
+  </div>
+</main>
+<footer>© 2026 picture-p — <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a> · <a href="#" onclick="window.ppOpenCookieSettings();return false;">Cookie-Einstellungen</a></footer>
+<script src="cookie-consent.js"></script>
+</body>
+</html>
