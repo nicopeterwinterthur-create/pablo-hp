@@ -16,10 +16,14 @@ einem Guss wirkt:
 
 ```css
 .card-frame{
-  background:#fff;padding:10px;border-radius:8px;margin-bottom:16px;
+  background:#fff;padding:5px;border-radius:8px;margin-bottom:16px;
   box-shadow:0 30px 55px -24px rgba(22,15,10,.32),0 10px 24px -8px rgba(22,15,10,.16);
 }
 ```
+
+Das Passepartout ist bewusst dünn (5px bei `.card-frame`, 6px bei der
+grösseren `.hero-frame`) für einen eleganten, hochwertigen Look —
+nicht dicker machen.
 
 - Bild/Video sitzt in einem weissen Passepartout (`.card-frame`) mit
   weichem Schatten — kein Bild liegt direkt auf dem Sektionshintergrund.
