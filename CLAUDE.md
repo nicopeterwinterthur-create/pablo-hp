@@ -49,6 +49,10 @@ nicht dicker machen.
   480px Inline-Bild, auf Mobile `max-width:100%`) auf eine zur
   Textspalte passende Grösse begrenzt — kein `object-fit:cover` mit
   fixem `aspect-ratio` auf diesen Artikel-Bildern.
+- Diese Artikel-Bilder sind linksbündig (`margin:0 0 <abstand>`),
+  NICHT `margin:auto`/zentriert — sie sollen exakt an derselben
+  linken Kante wie h1/h2/p im Artikel beginnen, nicht unabhängig
+  mittig in der Spalte schweben.
 
 ## Design-Routine: Header auf Unterseiten
 
