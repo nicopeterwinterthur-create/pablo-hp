@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ claude/photographer-homepage-layouts-5x7asr ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
