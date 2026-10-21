@@ -17,7 +17,12 @@
   h1,h2,h3{font-family:'Cormorant Garamond',serif;font-weight:600;color:var(--navy);}
   a{color:var(--rost);text-decoration:none;}
   .top{padding:28px 40px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;}
-  .top .brand{font-family:'Space Grotesk',sans-serif;font-size:18px;color:var(--navy);letter-spacing:.02em;}
+  .top .brand{display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease;transform-origin:left center;}
+  .top .brand:hover{transform:scale(1.03);}
+  .top .brand .owner{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;line-height:1.2;color:var(--rost);}
+  .top .brand .brand-name{display:block;font-size:24px;line-height:1.05;font-weight:500;letter-spacing:.01em;margin-top:1px;color:var(--navy);font-family:'Space Grotesk',sans-serif;transition:color .3s ease;}
+  .top .brand:hover .brand-name{color:var(--rost);}
+  .top .brand .tagline{display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-top:2px;font-weight:400;}
   .top a.back{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-family:'Space Grotesk',sans-serif;}
   main{max-width:960px;margin:0 auto;padding:70px 24px 100px;}
   .head{text-align:center;margin-bottom:56px;}
@@ -43,7 +48,11 @@
 </head>
 <body>
 <div class="top">
-  <div class="brand">picture-p</div>
+  <a class="brand" href="v3-herbstwaerme-navy.html">
+    <span class="owner">Pablo Bieri</span>
+    <span class="brand-name">picture-p</span>
+    <span class="tagline">Foto- &amp; Videografie</span>
+  </a>
   <a class="back" href="v3-herbstwaerme-navy.html#blog">← Zurück zur Startseite</a>
 </div>
 <main>

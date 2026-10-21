@@ -36,6 +36,37 @@ einem Guss wirkt:
   neue Testimonial-Quellen etc.) den bestehenden `.card-frame`-Stil
   wiederverwenden statt einen eigenen Look zu entwerfen.
 
+## Design-Routine: Header auf Unterseiten
+
+Jede eigenständige Unterseite (Blogartikel, Blog-Übersicht, Impressum,
+Datenschutz und jede künftige ähnliche Seite) nutzt denselben Header
+wie die Sidebar-Brand auf der Hauptseite, verlinkt auf die Startseite:
+
+```html
+<div class="top">
+  <a class="brand" href="v3-herbstwaerme-navy.html">
+    <span class="owner">Pablo Bieri</span>
+    <span class="brand-name">picture-p</span>
+    <span class="tagline">Foto- &amp; Videografie</span>
+  </a>
+  <a class="back" href="v3-herbstwaerme-navy.html">← Zurück zur Startseite</a>
+</div>
+```
+
+```css
+.top .brand{display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease;transform-origin:left center;}
+.top .brand:hover{transform:scale(1.03);}
+.top .brand .owner{display:block;font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;font-size:18px;line-height:1.2;color:var(--rost);}
+.top .brand .brand-name{display:block;font-size:24px;line-height:1.05;font-weight:500;letter-spacing:.01em;margin-top:1px;color:var(--navy);font-family:'Space Grotesk',sans-serif;transition:color .3s ease;}
+.top .brand:hover .brand-name{color:var(--rost);}
+.top .brand .tagline{display:block;font-family:'Inter',sans-serif;font-size:9.5px;letter-spacing:.03em;text-transform:uppercase;color:var(--muted);margin-top:2px;font-weight:400;}
+```
+
+- Nicht die abgekürzte einzeilige `picture-p`-Variante neu einführen —
+  immer das volle dreizeilige Brand-Block (Name/Produktname/Tagline).
+- Der Brand-Block selbst ist ein Link zur Startseite; der zusätzliche
+  "← Zurück zur Startseite"-Link bleibt rechts daneben bestehen.
+
 ## Weitere Konventionen
 
 - Farbpalette "Herbstwärme": `--cream`, `--panel`, `--rost`, `--ocker`,
