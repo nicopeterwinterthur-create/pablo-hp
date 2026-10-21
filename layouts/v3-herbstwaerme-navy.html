@@ -245,11 +245,18 @@
   .about{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center;}
   .about .ph{height:380px;}
   .about h2{font-size:34px;margin-bottom:18px;}
-  .about p{color:var(--ink);max-width:480px;}
+  .about p{color:var(--ink);max-width:480px;margin-bottom:16px;}
   .placeholder-note{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--rost);margin-bottom:10px;font-family:'Space Grotesk',sans-serif;}
-  .stats{display:flex;gap:40px;margin-top:28px;}
-  .stats div strong{display:block;font-size:26px;font-family:'Cormorant Garamond',serif;color:var(--navy);}
-  .stats div span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
+  .about-tagline{
+    font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:600;
+    font-size:21px;color:var(--rost);margin-top:22px;
+  }
+  .focus{margin-top:30px;}
+  .focus-label{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;font-family:'Space Grotesk',sans-serif;}
+  .focus-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-size:14px;color:var(--navy);}
+  .focus-links a{border-bottom:1px solid transparent;padding-bottom:1px;transition:border-color .25s ease,color .25s ease;}
+  .focus-links a:hover{color:var(--rost);border-color:var(--rost);}
+  .focus-sep{color:var(--line);}
 
   /* categories as cards */
   .cats-head{text-align:center;margin-bottom:56px;}
@@ -413,14 +420,21 @@
     <section class="about divider" id="about">
       <div class="ph img-about reveal"></div>
       <div class="about-text reveal">
-        <div class="placeholder-note">Platzhalter</div>
         <div class="eyebrow">Über mich</div>
         <h2>Geschichten erzählen<br>mit Licht.</h2>
-        <p>Platzhaltertext für die persönliche Vorstellung: Werdegang, Haltung, was Kund:innen erwarten dürfen — ruhig erzählt statt verkauft. Wird nach Rücksprache final formuliert.</p>
-        <div class="stats">
-          <div><strong>3+</strong><span>Jahre Erfahrung</span></div>
-          <div><strong>120+</strong><span>Shootings</span></div>
-          <div><strong>5.0</strong><span>Kundenbewertung</span></div>
+        <p>Ich bin Pablo Bieri und begeistere mich für Fotografie und Videografie. Mich fasziniert, wie man mit Licht, Perspektiven und dem richtigen Moment besondere Bilder und Videos gestalten kann.</p>
+        <p>Ob Porträts, Landschaften oder cineastische Filmaufnahmen – ich probiere gerne Neues aus und entwickle meinen eigenen Stil weiter. Dabei ist es mir wichtig, nicht einfach nur ein Motiv festzuhalten, sondern auch die Stimmung dahinter einzufangen.</p>
+        <p>Mit picture-p möchte ich meine Arbeiten zeigen, meine Erfahrungen erweitern und meine Leidenschaft für Bilder und bewegte Geschichten mit anderen teilen.</p>
+        <p class="about-tagline">Fotografie und Videografie aus Leidenschaft.</p>
+        <div class="focus">
+          <div class="focus-label">Mein Fokus</div>
+          <div class="focus-links">
+            <a href="#work">Porträts</a>
+            <span class="focus-sep">·</span>
+            <a href="#work">Landschaft &amp; Drohne</a>
+            <span class="focus-sep">·</span>
+            <a href="#work">Videografie</a>
+          </div>
         </div>
       </div>
     </section>
