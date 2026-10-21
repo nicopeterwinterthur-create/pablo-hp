@@ -35,6 +35,16 @@ einem Guss wirkt:
   Bild-/Medien-Sektion (weitere Portfolio-Kategorien, neue Blogposts,
   neue Testimonial-Quellen etc.) den bestehenden `.card-frame`-Stil
   wiederverwenden statt einen eigenen Look zu entwerfen.
+- Ausnahme Blog-Karten (`.blog-card .ph`): `aspect-ratio:1/1` statt
+  4/5, weil die Blog-Cover-Bilder eine Mischung aus Hoch- und
+  Querformat sind — 4/5 hätte Querformat-Motive zu stark beschnitten
+  (nur ~50 % der Bildbreite sichtbar). 1:1 ist der beste Kompromiss.
+- Bilder in Blogartikeln (`.cover`, `.inline-img` auf den einzelnen
+  Artikelseiten) werden NICHT beschnitten: volle Bildabmessungen
+  (`width:100%;height:auto;`), nur per `max-width` (z. B. 560px Cover,
+  480px Inline-Bild, auf Mobile `max-width:100%`) auf eine zur
+  Textspalte passende Grösse begrenzt — kein `object-fit:cover` mit
+  fixem `aspect-ratio` auf diesen Artikel-Bildern.
 
 ## Design-Routine: Header auf Unterseiten
 
@@ -66,6 +76,12 @@ wie die Sidebar-Brand auf der Hauptseite, verlinkt auf die Startseite:
   immer das volle dreizeilige Brand-Block (Name/Produktname/Tagline).
 - Der Brand-Block selbst ist ein Link zur Startseite; der zusätzliche
   "← Zurück zur Startseite"-Link bleibt rechts daneben bestehen.
+- Mobile (≤600/640px, je nach Datei der bestehende Breakpoint): `.top`
+  bekommt `flex-direction:column;align-items:flex-start;gap:10px;`,
+  damit der Brand-Block links auf drei Zeilen Platz hat, und
+  `.top a.back{align-self:flex-end;}`, damit der Link darunter
+  rechtsbündig steht — nebeneinander in einer Reihe ist auf schmalen
+  Viewports zu eng.
 
 ## Weitere Konventionen
 
