@@ -262,8 +262,12 @@
   /* categories as cards */
   .cats-head{text-align:center;margin-bottom:56px;}
   .cats-head h2{font-size:36px;margin-top:12px;}
-  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-  .card .ph{aspect-ratio:4/5;margin-bottom:16px;}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:980px;margin:0 auto;}
+  .card-frame{
+    background:#fff;padding:10px;border-radius:8px;margin-bottom:16px;
+    box-shadow:0 30px 55px -24px rgba(22,15,10,.32),0 10px 24px -8px rgba(22,15,10,.16);
+  }
+  .card .ph{aspect-ratio:4/5;border-radius:4px;}
   .card-video-el{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
   .card h3{font-size:22px;}
   .card p{font-size:13px;color:var(--muted);margin-top:6px;}
@@ -279,7 +283,7 @@
   .blog-more a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--navy);padding-bottom:3px;}
 
   /* quote */
-  .quote{text-align:center;background:var(--cream);}
+  .quote{text-align:center;}
   .quote-frame{
     position:relative;max-width:720px;margin:0 auto;background:#fff;
     padding:60px 56px 48px;border-radius:8px;
@@ -290,8 +294,22 @@
     font-family:'Cormorant Garamond',serif;font-size:90px;line-height:1;
     color:var(--panel);font-style:italic;user-select:none;
   }
+  .quote-slider{position:relative;display:grid;}
+  .quote-slide{grid-area:1/1;opacity:0;transition:opacity 1s ease;pointer-events:none;}
+  .quote-slide.is-active{opacity:1;pointer-events:auto;}
   .quote blockquote{font-family:'Cormorant Garamond',serif;font-size:clamp(20px,2.6vw,28px);margin:0 auto;font-style:italic;color:var(--navy);position:relative;}
   .quote cite{display:block;margin-top:22px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-style:normal;}
+  .quote-dots{display:flex;justify-content:center;gap:10px;margin-top:32px;position:relative;}
+  .quote-dot{width:7px;height:7px;border-radius:50%;border:1px solid var(--muted);background:transparent;cursor:pointer;padding:0;transition:background .3s ease,border-color .3s ease,transform .3s ease;}
+  .quote-dot.is-active{background:var(--rost);border-color:var(--rost);transform:scale(1.25);}
+
+  /* subtle per-section tints so sections read apart at a glance; low
+     alpha keeps the page-wide relief texture visible underneath */
+  #about{background:rgba(179,113,79,.05);}
+  #work{background:rgba(201,154,58,.05);}
+  .quote{background:rgba(22,35,61,.045);}
+  #blog{background:rgba(107,58,44,.04);}
+  #contact{background:rgba(240,228,208,.55);}
 
   /* contact */
   .contact{text-align:center;}
@@ -452,17 +470,19 @@
         <h2>Ausgewählte Arbeiten</h2>
       </div>
       <div class="cards">
-        <div class="card reveal"><div class="ph img-portrait-01"></div><h3>Portrait</h3><p>Individuell, natürliches Licht.</p></div>
-        <div class="card reveal"><div class="ph img-produkt-01"></div><h3>Produkt</h3><p>Stimmungsvoll in Szene gesetzt.</p></div>
+        <div class="card reveal"><div class="card-frame"><div class="ph img-portrait-01"></div></div><h3>Portrait</h3><p>Porträts, die zeigen, wer du wirklich bist.</p></div>
+        <div class="card reveal"><div class="card-frame"><div class="ph img-produkt-01"></div></div><h3>Produkt</h3><p>Produkte im besten Licht — appetitlich bis ins Detail inszeniert.</p></div>
         <div class="card reveal">
-          <div class="ph">
-            <video class="card-video-el" autoplay muted loop playsinline preload="auto" poster="../assets/video/videografie-poster.webp">
-              <source src="../assets/video/videografie-loop.webm" type="video/webm">
-              <source src="../assets/video/videografie-loop.mp4" type="video/mp4">
-            </video>
+          <div class="card-frame">
+            <div class="ph">
+              <video class="card-video-el" autoplay muted loop playsinline preload="auto" poster="../assets/video/videografie-poster.webp">
+                <source src="../assets/video/videografie-loop.webm" type="video/webm">
+                <source src="../assets/video/videografie-loop.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
           <h3>Videografie</h3>
-          <p>Cineastische Bewegtbilder.</p>
+          <p>Bewegtbilder, die Emotionen spürbar machen.</p>
         </div>
       </div>
     </section>
@@ -470,8 +490,25 @@
     <section class="quote divider">
       <div class="quote-frame reveal">
         <span class="quote-mark">&#8222;</span>
-        <blockquote>Platzhalter-Zitat einer zufriedenen Kundin oder eines Kunden — später durch echtes Testimonial ersetzen.</blockquote>
-        <cite>— Name, Anlass</cite>
+        <div class="quote-slider">
+          <div class="quote-slide is-active">
+            <blockquote>Pablo hat es geschafft, dass ich mich vor der Kamera vollkommen entspannt gefühlt habe. Die Bilder wirken natürlich und zeigen genau die Stimmung, die ich mir gewünscht habe.</blockquote>
+            <cite>— Laura M., Business-Porträt</cite>
+          </div>
+          <div class="quote-slide">
+            <blockquote>Unsere neuen Food-Fotos haben spürbar mehr Gäste auf die Karte aufmerksam gemacht. Pablo versteht es, Licht und Details so zu setzen, dass das Essen einfach einladend wirkt.</blockquote>
+            <cite>— Markus H., Inhaber Restaurant Rosengarten</cite>
+          </div>
+          <div class="quote-slide">
+            <blockquote>Das Hochzeitsvideo hat uns zu Tränen gerührt — jede Emotion des Tages ist eingefangen, ganz ohne aufdringliche Kamera. Ein Film, den wir für immer anschauen werden.</blockquote>
+            <cite>— Nina &amp; David, Hochzeit</cite>
+          </div>
+        </div>
+        <div class="quote-dots">
+          <button class="quote-dot is-active" type="button" data-goto="0" aria-label="Testimonial 1"></button>
+          <button class="quote-dot" type="button" data-goto="1" aria-label="Testimonial 2"></button>
+          <button class="quote-dot" type="button" data-goto="2" aria-label="Testimonial 3"></button>
+        </div>
       </div>
     </section>
 
@@ -627,6 +664,30 @@
     dot.addEventListener('click', function(){ heroGoTo(i); heroAutoplay(); });
   });
   heroAutoplay();
+
+  /* testimonial slideshow */
+  var quoteSlides = document.querySelectorAll('.quote-slide');
+  var quoteDots = document.querySelectorAll('.quote-dot');
+  if(quoteSlides.length){
+    var quoteCount = quoteSlides.length;
+    var quoteCurrent = 0;
+    var quoteTimer;
+    function quoteGoTo(i){
+      quoteSlides[quoteCurrent].classList.remove('is-active');
+      quoteDots[quoteCurrent].classList.remove('is-active');
+      quoteCurrent = (i + quoteCount) % quoteCount;
+      quoteSlides[quoteCurrent].classList.add('is-active');
+      quoteDots[quoteCurrent].classList.add('is-active');
+    }
+    function quoteAutoplay(){
+      clearInterval(quoteTimer);
+      quoteTimer = setInterval(function(){ quoteGoTo(quoteCurrent + 1); }, 7000);
+    }
+    quoteDots.forEach(function(dot, i){
+      dot.addEventListener('click', function(){ quoteGoTo(i); quoteAutoplay(); });
+    });
+    quoteAutoplay();
+  }
 
   /* hero colour / black-white toggle */
   var bwToggle = document.querySelector('.hero-bw-toggle');
