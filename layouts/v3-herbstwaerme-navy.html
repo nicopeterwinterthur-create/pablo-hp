@@ -498,22 +498,8 @@
         <span class="quote-mark">&#8222;</span>
         <div class="quote-slider">
           <div class="quote-slide is-active">
-            <blockquote>Pablo hat es geschafft, dass ich mich vor der Kamera vollkommen entspannt gefühlt habe. Die Bilder wirken natürlich und zeigen genau die Stimmung, die ich mir gewünscht habe.</blockquote>
-            <cite>— Laura M., Business-Porträt</cite>
+            <blockquote>Hier könnte Ihr Testimonial stehen!</blockquote>
           </div>
-          <div class="quote-slide">
-            <blockquote>Unsere neuen Food-Fotos haben spürbar mehr Gäste auf die Karte aufmerksam gemacht. Pablo versteht es, Licht und Details so zu setzen, dass das Essen einfach einladend wirkt.</blockquote>
-            <cite>— Markus H., Inhaber Restaurant Rosengarten</cite>
-          </div>
-          <div class="quote-slide">
-            <blockquote>Pablo hat für die Korporation Baar einen stimmungsvollen Imagefilm unserer Liegenschaften realisiert — ruhig erzählt, technisch einwandfrei und termingerecht geliefert.</blockquote>
-            <cite>— Korporation Baar</cite>
-          </div>
-        </div>
-        <div class="quote-dots">
-          <button class="quote-dot is-active" type="button" data-goto="0" aria-label="Testimonial 1"></button>
-          <button class="quote-dot" type="button" data-goto="1" aria-label="Testimonial 2"></button>
-          <button class="quote-dot" type="button" data-goto="2" aria-label="Testimonial 3"></button>
         </div>
       </div>
     </section>
@@ -674,7 +660,7 @@
   /* testimonial slideshow */
   var quoteSlides = document.querySelectorAll('.quote-slide');
   var quoteDots = document.querySelectorAll('.quote-dot');
-  if(quoteSlides.length){
+  if(quoteSlides.length > 1){
     var quoteCount = quoteSlides.length;
     var quoteCurrent = 0;
     var quoteTimer;
