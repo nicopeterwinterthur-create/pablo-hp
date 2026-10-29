@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /layouts/overview.html
+Disallow: /layouts/01-minimal-editorial.html
+Disallow: /layouts/02-bold-portfolio.html
+Disallow: /layouts/03-classic-elegant.html
+Disallow: /layouts/v1-herbstwaerme-navy.html
+Disallow: /layouts/v1-herbstwaerme-navy-blogartikel.html
+Disallow: /layouts/v3a-warme-naehe.html
+Disallow: /layouts/v3a-warme-naehe-blogartikel.html
+Disallow: /layouts/v3b-cinematic-frame.html
+Disallow: /layouts/v3b-cinematic-frame-blogartikel.html
+Disallow: /layouts/v3c-ruhiger-fluss.html
+Disallow: /layouts/v3c-ruhiger-fluss-blogartikel.html
+
+Sitemap: https://nicopeterwinterthur-create.github.io/pablo-hp/sitemap.xml

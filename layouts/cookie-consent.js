@@ -1,5 +1,7 @@
 (function(){
   var STORAGE_KEY = 'photographyp_cookie_consent';
+  var scriptEl = document.currentScript;
+  var DATENSCHUTZ_HREF = scriptEl ? new URL('datenschutz.html', scriptEl.src).href : 'datenschutz.html';
 
   function getConsent(){
     try { return JSON.parse(localStorage.getItem(STORAGE_KEY)); }
@@ -65,7 +67,7 @@
       + '<div id="pp-cookie-eyebrow">Cookies</div>'
       + '<div id="pp-cookie-heading">Deine Privatsphäre ist uns wichtig</div>'
       + '<p>Diese Website verwendet aktuell nur technisch notwendige Speicherung (z. B. für diese Cookie-Auswahl). '
-      + 'Mehr dazu in der <a href="datenschutz.html">Datenschutzerklärung</a>.</p>'
+      + 'Mehr dazu in der <a href="' + DATENSCHUTZ_HREF + '">Datenschutzerklärung</a>.</p>'
       + '</div>'
       + '<div id="pp-cookie-actions">'
       + '<button type="button" id="pp-cookie-necessary">Nur notwendige</button>'

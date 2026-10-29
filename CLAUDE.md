@@ -4,8 +4,60 @@ Portfolio-Website für Fotograf Pablo Bieri (Business: "picture-p").
 Statisches HTML/CSS/vanilla-JS, kein Build-Tool. Deployment via GitHub
 Pages (Push auf `main` → `.github/workflows/pages.yml`).
 
-**Kanonische Live-Seite:** `layouts/v3-herbstwaerme-navy.html`
-Live-URL: https://nicopeterwinterthur-create.github.io/pablo-hp/layouts/v3-herbstwaerme-navy.html
+**Kanonische Live-Seite:** `/index.html` (Repo-Wurzel)
+Live-URL: https://nicopeterwinterthur-create.github.io/pablo-hp/
+(sobald eine eigene Domain eingerichtet ist: alle `nicopeterwinterthur-create.github.io/pablo-hp/`-Referenzen — Canonical-Tags, OG-URLs, JSON-LD, `sitemap.xml`, `robots.txt` — auf die neue Domain aktualisieren)
+
+## Seitenstruktur
+
+- `/index.html` — die eigentliche Startseite (liegt bewusst an der
+  Wurzel, nicht unter `/layouts/`, für eine saubere Root-URL/SEO).
+  Referenziert Assets über relative Pfade ohne `../` (z. B.
+  `assets/images/...`, `layouts/datenschutz.html`).
+- `/layouts/v3-herbstwaerme-navy.html` — alte URL der Startseite,
+  jetzt nur noch ein Redirect-Stub (Meta-Refresh + JS + Canonical) auf
+  `/`, damit alte Links/Bookmarks nicht brechen. Diese Datei NICHT
+  wieder mit echtem Seiteninhalt befüllen.
+- `/layouts/overview.html` — interne Design-Historie (frühere
+  Layout-Varianten). `noindex`, nicht öffentlich verlinkt.
+- `/layouts/v3-herbstwaerme-navy-blog-*.html`, `impressum.html`,
+  `datenschutz.html` — Unterseiten, bleiben in `/layouts/`, verlinken
+  per `../` zurück zur Startseite (siehe Header-Routine unten).
+- `cookie-consent.js` ermittelt den Link zur Datenschutzerklärung
+  dynamisch über `document.currentScript.src` (nicht mehr hartkodiert
+  `datenschutz.html`) — funktioniert dadurch unabhängig davon, ob das
+  Skript von `/` oder von `/layouts/...` aus eingebunden wird. Diesen
+  Mechanismus beibehalten, falls das Skript an weiteren Orten
+  eingebunden wird.
+
+## SEO & AEO
+
+- Jede öffentliche Seite bekommt: eindeutigen `<title>`, `<meta
+  name="description">`, `<link rel="canonical">`, Open-Graph- +
+  Twitter-Card-Tags, `lang="de-CH"`.
+- Strukturierte Daten (JSON-LD): `ProfessionalService`+`Person` und
+  `FAQPage` auf der Startseite, `BlogPosting` auf jedem Blogartikel.
+  Bei neuen Blogposts denselben `BlogPosting`-Block ergänzen
+  (headline, image, datePublished, author, publisher,
+  mainEntityOfPage).
+- `robots.txt` + `sitemap.xml` liegen im Repo-Root. Bei neuen
+  öffentlichen Seiten in `sitemap.xml` ergänzen; interne/Entwurfs-
+  Seiten (Layout-Varianten, Vorschauen) per `robots.txt`-Disallow und
+  `<meta name="robots" content="noindex, nofollow">` ausschliessen.
+- Jeder Blogartikel bekommt am Ende einen "Weitere Beiträge"-Block
+  (`.related`) mit Links zu den anderen Artikeln — internes Linking
+  für Crawl-Tiefe/Themenautorität. Bei neuen Posts ergänzen und in
+  bestehenden Artikeln nachziehen.
+- **Keine erfundenen NAP-Daten** (Adresse, Telefon, Google-Rating o. Ä.)
+  in Schema oder Texten verwenden — Impressum enthält aktuell nur
+  Platzhalter. Sobald echte Kontaktdaten vorliegen: gleichzeitig in
+  Impressum UND in den JSON-LD-Blöcken ergänzen (NAP-Konsistenz ist
+  ein Rankingfaktor). Bis dahin bei generischen, nicht überprüfbaren
+  Aussagen bleiben (z. B. "in der Schweiz" statt einer konkreten
+  Adresse).
+- Echte Domain-Autorität (Backlinks, Google Business-Profil,
+  Verzeichniseinträge, Bewertungen) entsteht nicht durch Code —
+  das sind Folgeschritte ausserhalb dieses Repos.
 
 ## Design-Routine: einheitlicher "Frame"-Look
 
@@ -62,14 +114,18 @@ wie die Sidebar-Brand auf der Hauptseite, verlinkt auf die Startseite:
 
 ```html
 <div class="top">
-  <a class="brand" href="v3-herbstwaerme-navy.html">
+  <a class="brand" href="../">
     <span class="owner">Pablo Bieri</span>
     <span class="brand-name">picture-p</span>
     <span class="tagline">Foto- &amp; Videografie</span>
   </a>
-  <a class="back" href="v3-herbstwaerme-navy.html">← Zurück zur Startseite</a>
+  <a class="back" href="../">← Zurück zur Startseite</a>
 </div>
 ```
+
+(Seiten in `/layouts/` verlinken mit `../` zur Startseite an der
+Repo-Wurzel, nicht mehr mit `v3-herbstwaerme-navy.html` — siehe
+"Seitenstruktur" oben.)
 
 ```css
 .top .brand{display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease;transform-origin:left center;}
