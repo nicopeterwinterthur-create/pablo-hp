@@ -885,19 +885,20 @@
       submitBtn.textContent = 'Wird gesendet …';
       statusEl.textContent = '';
       statusEl.className = 'form-status';
-      fetch('https://formsubmit.co/ajax/picturep.zg@gmail.com', {
+      fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          Name: contactForm.querySelector('[name="name"]').value,
-          Email: contactForm.querySelector('[name="email"]').value,
-          Nachricht: contactForm.querySelector('[name="message"]').value,
-          _subject: 'Neue Anfrage über picture-p'
+          access_key: '2139fc95-9f28-4ae2-9efe-ed46fbccb14c',
+          name: contactForm.querySelector('[name="name"]').value,
+          email: contactForm.querySelector('[name="email"]').value,
+          message: contactForm.querySelector('[name="message"]').value,
+          subject: 'Neue Anfrage über picture-p'
         })
       }).then(function(r){
-        if(!r.ok) throw new Error('request failed');
         return r.json();
-      }).then(function(){
+      }).then(function(data){
+        if(!data.success) throw new Error('request failed');
         statusEl.textContent = 'Danke für deine Anfrage! Ich melde mich so bald wie möglich.';
         statusEl.className = 'form-status ok';
         contactForm.reset();
