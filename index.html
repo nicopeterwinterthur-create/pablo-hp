@@ -4,20 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>picture-p — Fotografie &amp; Videografie von Pablo Bieri</title>
-<meta name="description" content="Pablo Bieri / picture-p: Fotografie und Videografie aus der Schweiz. Porträts, Produktfotografie und cineastische Bewegtbilder — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
+<meta name="description" content="Pablo Bieri / picture-p: Fotografie und Videografie in Zug, Baar, Grossraum Zürich und der Innerschweiz (Luzern, Schwyz). Porträts, Produktfotografie und cineastische Bewegtbilder — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
+<meta name="keywords" content="Fotograf Zug, Fotograf Baar, Fotograf Zürich, Fotograf Luzern, Fotograf Schwyz, Fotograf Innerschweiz, Porträtfotografie, Produktfotografie, Videografie">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://nicopeterwinterthur-create.github.io/pablo-hp/">
+<meta name="geo.region" content="CH-ZG">
+<meta name="geo.placename" content="Zug, Schweiz">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="picture-p">
 <meta property="og:title" content="picture-p — Fotografie & Videografie von Pablo Bieri">
-<meta property="og:description" content="Porträts, Produktfotografie und cineastische Bewegtbilder — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
+<meta property="og:description" content="Porträts, Produktfotografie und cineastische Bewegtbilder in Zug, Baar, Grossraum Zürich und der Innerschweiz — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
 <meta property="og:url" content="https://nicopeterwinterthur-create.github.io/pablo-hp/">
 <meta property="og:image" content="https://nicopeterwinterthur-create.github.io/pablo-hp/assets/images/hero/hero-slide-01-full.webp">
 <meta property="og:locale" content="de_CH">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="picture-p — Fotografie & Videografie von Pablo Bieri">
-<meta name="twitter:description" content="Porträts, Produktfotografie und cineastische Bewegtbilder — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
+<meta name="twitter:description" content="Porträts, Produktfotografie und cineastische Bewegtbilder in Zug, Baar, Grossraum Zürich und der Innerschweiz — ruhig erzählt, mit Gespür für Licht und den richtigen Moment.">
 <meta name="twitter:image" content="https://nicopeterwinterthur-create.github.io/pablo-hp/assets/images/hero/hero-slide-01-full.webp">
 
 <script type="application/ld+json">
@@ -27,16 +30,22 @@
   "name": "picture-p",
   "image": "https://nicopeterwinterthur-create.github.io/pablo-hp/assets/images/hero/hero-slide-01-full.webp",
   "url": "https://nicopeterwinterthur-create.github.io/pablo-hp/",
-  "description": "Fotografie und Videografie aus der Schweiz: Porträts, Produktfotografie und cineastische Bewegtbilder.",
+  "description": "Fotografie und Videografie in Zug, Baar, Grossraum Zürich und der Innerschweiz: Porträts, Produktfotografie und cineastische Bewegtbilder.",
   "founder": {
     "@type": "Person",
     "name": "Pablo Bieri",
     "jobTitle": "Fotograf & Videograf"
   },
-  "areaServed": {
-    "@type": "Country",
-    "name": "Schweiz"
-  }
+  "areaServed": [
+    { "@type": "City", "name": "Zug" },
+    { "@type": "City", "name": "Baar" },
+    { "@type": "City", "name": "Zürich" },
+    { "@type": "City", "name": "Luzern" },
+    { "@type": "AdministrativeArea", "name": "Kanton Schwyz" },
+    { "@type": "AdministrativeArea", "name": "Innerschweiz" },
+    { "@type": "AdministrativeArea", "name": "Grossraum Zürich" },
+    { "@type": "Country", "name": "Schweiz" }
+  ]
 }
 </script>
 <script type="application/ld+json">
@@ -73,7 +82,7 @@
       "name": "In welcher Region ist picture-p tätig?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "In der Schweiz — Shootings vor Ort sind nach Absprache auch ausserhalb der Region möglich."
+        "text": "Schwerpunkt ist die Region Zug — inklusive Baar — sowie der Grossraum Zürich und die Innerschweiz (u. a. Luzern, Schwyz). Shootings vor Ort sind nach Absprache auch ausserhalb dieser Region möglich."
       }
     }
   ]
@@ -208,6 +217,7 @@
     opacity:0;animation:hero-in 2.6s cubic-bezier(.19,.55,.18,1) 1s forwards;
   }
   .hero h1{font-size:clamp(34px,5vw,54px);line-height:1.18;}
+  .hero-location{margin-top:14px;font-family:'Space Grotesk',sans-serif;font-size:13px;letter-spacing:.03em;color:var(--sidebar-muted);}
   .hero .actions{margin-top:36px;display:flex;gap:32px;justify-content:center;flex-wrap:wrap;}
   .btn{
     padding:15px 32px;border:1px solid var(--panel);border-radius:8px;
@@ -412,6 +422,10 @@
     padding:14px 16px;border:1px solid var(--line);background:#fff;font-family:'Inter',sans-serif;font-size:14px;border-radius:4px;
   }
   .contact textarea{min-height:110px;resize:vertical;}
+  .contact .btn[disabled]{opacity:.6;cursor:default;}
+  .form-status{min-height:18px;font-size:13px;margin:0;}
+  .form-status.ok{color:#3f7a4f;}
+  .form-status.error{color:#b3714f;}
 
   footer{padding:30px 64px;font-size:12px;color:var(--muted);text-align:center;border-top:1px solid var(--line);font-family:'Space Grotesk',sans-serif;}
 
@@ -487,7 +501,6 @@
       </nav>
     </div>
     <div class="sidebar-bottom">
-      <div class="social">Instagram · E-Mail</div>
       <div class="legal">
         <a href="layouts/impressum.html">Impressum</a>
         <a href="layouts/datenschutz.html">Datenschutz</a>
@@ -499,6 +512,7 @@
     <section class="hero" id="start">
       <div class="hero-content">
         <h1>Ruhige Bilder für Momente,<br>die dich bewegen.</h1>
+        <p class="hero-location">Fotograf &amp; Videograf — Zug, Baar, Grossraum Zürich &amp; Innerschweiz (Luzern, Schwyz)</p>
         <div class="actions">
           <a class="btn" href="#work">Portfolio ansehen</a>
           <a class="btn" href="#contact">Termin anfragen</a>
@@ -649,12 +663,14 @@
 
     <section class="contact divider" id="contact">
       <h2 class="reveal">Kontakt</h2>
-      <p class="reveal">Platzhalter — Formular funktional nachrüsten, sobald E-Mail-Adresse feststeht.</p>
-      <form class="reveal" onsubmit="return false;">
-        <input type="text" placeholder="Name">
-        <input type="email" placeholder="E-Mail">
-        <textarea placeholder="Nachricht"></textarea>
+      <p class="reveal">Aus Datenschutzgründen sind hier keine öffentlichen Kontaktdaten aufgeführt — bitte das Formular nutzen, Rückmeldung folgt per E-Mail.</p>
+      <form class="reveal" id="contact-form">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="E-Mail" required>
+        <textarea name="message" placeholder="Nachricht" required></textarea>
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
         <button class="btn" type="submit" style="background:var(--navy);border-color:var(--navy);color:var(--cream);box-shadow:none;">Anfrage senden</button>
+        <p class="form-status" aria-live="polite"></p>
       </form>
     </section>
 
@@ -848,6 +864,44 @@
     if(e.key === 'ArrowRight') lightbox.querySelector('.lightbox-next').click();
     if(e.key === 'ArrowLeft') lightbox.querySelector('.lightbox-prev').click();
   });
+
+  /* contact form */
+  var contactForm = document.getElementById('contact-form');
+  if(contactForm){
+    var statusEl = contactForm.querySelector('.form-status');
+    var submitBtn = contactForm.querySelector('button[type="submit"]');
+    contactForm.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(contactForm.querySelector('[name="_honey"]').value) return; // bot trap
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet …';
+      statusEl.textContent = '';
+      statusEl.className = 'form-status';
+      fetch('https://formsubmit.co/ajax/picturep.zg@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          Name: contactForm.querySelector('[name="name"]').value,
+          Email: contactForm.querySelector('[name="email"]').value,
+          Nachricht: contactForm.querySelector('[name="message"]').value,
+          _subject: 'Neue Anfrage über picture-p'
+        })
+      }).then(function(r){
+        if(!r.ok) throw new Error('request failed');
+        return r.json();
+      }).then(function(){
+        statusEl.textContent = 'Danke für deine Anfrage! Ich melde mich so bald wie möglich.';
+        statusEl.className = 'form-status ok';
+        contactForm.reset();
+      }).catch(function(){
+        statusEl.textContent = 'Da ist etwas schiefgelaufen. Bitte direkt an picturep.zg@gmail.com schreiben.';
+        statusEl.className = 'form-status error';
+      }).finally(function(){
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage senden';
+      });
+    });
+  }
 })();
 </script>
 
