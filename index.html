@@ -300,12 +300,12 @@
      above for reliability. */
   @media(min-width:980px){
     .hero{
-      flex-direction:row;align-items:flex-end;justify-content:center;
+      flex-direction:row;align-items:flex-start;justify-content:center;
       text-align:left;gap:56px;padding:96px 64px 100px;
       max-width:1280px;margin:0 auto;
     }
     .hero-content{
-      max-width:460px;flex:0 0 460px;margin-top:-26px;position:relative;z-index:2;
+      max-width:460px;flex:0 0 460px;margin-top:0;position:relative;z-index:2;
     }
     .hero-content::after{
       content:"01";position:absolute;right:-54px;top:-54px;
@@ -315,7 +315,7 @@
     .hero h1{font-size:clamp(38px,3.6vw,52px);}
     .hero .actions{justify-content:flex-start;}
     .hero-gallery{
-      flex:1 1 640px;max-width:640px;margin-top:34px;position:relative;z-index:1;
+      flex:1 1 640px;max-width:640px;margin-top:0;position:relative;z-index:1;
     }
   }
 
