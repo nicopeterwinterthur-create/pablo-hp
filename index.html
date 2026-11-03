@@ -294,10 +294,9 @@
   .hero.is-bw .hero-bw-toggle-thumb{transform:translateX(18px);}
 
   /* editorial split: asymmetric hero on wide screens — left-aligned
-     title staggered against a larger, right-shifted photo frame,
-     with a faint oversized numeral bridging the two as a quiet
-     signature touch. Mobile/tablet keep the simple centered stack
-     above for reliability. */
+     title, top-aligned with a larger, right-shifted photo frame.
+     Mobile/tablet keep the simple centered stack above for
+     reliability. */
   @media(min-width:980px){
     .hero{
       flex-direction:row;align-items:flex-start;justify-content:center;
@@ -306,11 +305,6 @@
     }
     .hero-content{
       max-width:460px;flex:0 0 460px;margin-top:0;position:relative;z-index:2;
-    }
-    .hero-content::after{
-      content:"01";position:absolute;right:-54px;top:-54px;
-      font-family:'Cormorant Garamond',serif;font-weight:600;font-size:210px;line-height:1;
-      color:var(--navy);opacity:.06;pointer-events:none;
     }
     .hero h1{font-size:clamp(38px,3.6vw,52px);}
     .hero .actions{justify-content:flex-start;}
