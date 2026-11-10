@@ -403,11 +403,14 @@
 
   /* blog */
   .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:980px;margin:0 auto;}
+  .blog-card{position:relative;cursor:pointer;}
   .blog-card .ph{aspect-ratio:1/1;border-radius:4px;}
   .blog-date{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ocker);}
-  .blog-card h3{font-size:19px;margin:10px 0 8px;line-height:1.3;}
+  .blog-card h3{font-size:19px;margin:10px 0 8px;line-height:1.3;transition:color .25s ease;}
   .blog-card p{font-size:13px;color:var(--muted);margin-bottom:12px;}
   .blog-card .read-more{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--rost);border-bottom:1px solid var(--rost);padding-bottom:2px;font-family:'Space Grotesk',sans-serif;}
+  .blog-card .read-more::after{content:"";position:absolute;inset:0;}
+  .blog-card:hover h3{color:var(--rost);}
   .blog-more{text-align:center;margin-top:44px;}
   .blog-more a{font-size:13px;letter-spacing:.06em;text-transform:uppercase;border-bottom:1px solid var(--navy);padding-bottom:3px;}
 
@@ -636,7 +639,7 @@
     <section id="blog" class="divider">
       <div class="cats-head reveal">
         <div class="eyebrow">Blog</div>
-        <h2>Aus dem Feld</h2>
+        <h2>picture-p Artikel</h2>
       </div>
       <div class="blog-grid">
         <article class="blog-card reveal">
