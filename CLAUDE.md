@@ -5,8 +5,12 @@ Statisches HTML/CSS/vanilla-JS, kein Build-Tool. Deployment via GitHub
 Pages (Push auf `main` → `.github/workflows/pages.yml`).
 
 **Kanonische Live-Seite:** `/index.html` (Repo-Wurzel)
-Live-URL: https://nicopeterwinterthur-create.github.io/pablo-hp/
-(sobald eine eigene Domain eingerichtet ist: alle `nicopeterwinterthur-create.github.io/pablo-hp/`-Referenzen — Canonical-Tags, OG-URLs, JSON-LD, `sitemap.xml`, `robots.txt` — auf die neue Domain aktualisieren)
+Live-URL: https://www.picture-p.ch/ (eigene Domain, via GitHub Pages
+Custom Domain auf `nicopeterwinterthur-create.github.io` CNAME/A-Records
+verbunden). Alte GitHub-Pages-URL (`nicopeterwinterthur-create.github.io/pablo-hp/`)
+funktioniert ggf. weiterhin, ist aber nicht mehr die kanonische Adresse —
+Canonical-Tags, OG-URLs, JSON-LD, `sitemap.xml` und `robots.txt` zeigen
+bereits auf die neue Domain.
 
 ## Seitenstruktur
 

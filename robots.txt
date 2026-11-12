@@ -13,4 +13,4 @@ Disallow: /layouts/v3b-cinematic-frame-blogartikel.html
 Disallow: /layouts/v3c-ruhiger-fluss.html
 Disallow: /layouts/v3c-ruhiger-fluss-blogartikel.html
 
-Sitemap: https://nicopeterwinterthur-create.github.io/pablo-hp/sitemap.xml
+Sitemap: https://www.picture-p.ch/sitemap.xml
